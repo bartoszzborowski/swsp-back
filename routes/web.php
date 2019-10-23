@@ -18,8 +18,8 @@ Route::get('/', function () {
 });
 
 Route::get('/article', function () {
-    $test = Article::search('body');
+    $test = Article::search('aut dolores')->select(['title', 'body']);
 
-    dd($test->profile());
+    dd($test->get());
 
 });
