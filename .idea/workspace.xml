@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81b3004e-5d70-4ded-bd9c-ec2412262d4f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/swsp-back.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/swsp-back.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/InputObject/ReviewInput.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/UpdateUserPasswordMutation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/UserProfilePhotoMutation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Queries/UsersQuery.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/UserType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/UsersQuery.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/graphql.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/graphql.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -180,7 +178,7 @@
       <workItem from="1571392234757" duration="189000" />
       <workItem from="1571485743544" duration="15000" />
       <workItem from="1571485770763" duration="4452000" />
-      <workItem from="1571852138620" duration="2805000" />
+      <workItem from="1571852138620" duration="4749000" />
     </task>
     <servers />
   </component>

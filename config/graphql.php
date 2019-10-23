@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use App\GraphQL\InputObject\ReviewInput;
+
 return [
 
     // The prefix for routes
@@ -96,10 +98,10 @@ return [
     'schemas' => [
         'default' => [
             'query' => [
-                // 'example_query' => ExampleQuery::class,
+                'users' => App\GraphQL\Queries\UsersQuery::class
             ],
             'mutation' => [
-                // 'example_mutation'  => ExampleMutation::class,
+                'updateUserPassword' => App\GraphQL\Mutations\UpdateUserPasswordMutation::class
             ],
             'middleware' => [],
             'method'     => ['get', 'post'],
@@ -112,13 +114,19 @@ return [
     // Example:
     //
     // 'types' => [
-    //     'user' => 'App\GraphQL\Type\UserType'
+    //     'user' => 'App\GraphQL\Type\UserType.php'
     // ]
     //
+//    'types' => [
+//        // 'example'           => ExampleType::class,
+//        // 'relation_example'  => ExampleRelationType::class,
+//        // \Rebing\GraphQL\Support\UploadType::class,
+//    ],
+
     'types' => [
-        // 'example'           => ExampleType::class,
-        // 'relation_example'  => ExampleRelationType::class,
-        // \Rebing\GraphQL\Support\UploadType::class,
+        \Rebing\GraphQL\Support\UploadType::class,
+        'user' => App\GraphQL\Types\UserType::class,
+        'ReviewInput' => ReviewInput::class
     ],
 
     // The types will be loaded on demand. Default is to load all types on each request
