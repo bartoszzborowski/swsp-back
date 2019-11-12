@@ -101,7 +101,8 @@ return [
                 'users' => App\GraphQL\Queries\UsersQuery::class
             ],
             'mutation' => [
-                'updateUserPassword' => App\GraphQL\Mutations\UpdateUserPasswordMutation::class
+                'updateUserPassword' => App\GraphQL\Mutations\UpdateUserPasswordMutation::class,
+                'userLogin' => App\GraphQL\Mutations\LoginUser::class
             ],
             'middleware' => [],
             'method'     => ['get', 'post'],
@@ -125,7 +126,8 @@ return [
 
     'types' => [
         \Rebing\GraphQL\Support\UploadType::class,
-        'user' => App\GraphQL\Types\UserType::class,
+        'UserType' => App\GraphQL\Types\UserType::class,
+        'UserLoginInputType' => App\GraphQL\Types\UserLoginType::class,
         'ReviewInput' => ReviewInput::class
     ],
 

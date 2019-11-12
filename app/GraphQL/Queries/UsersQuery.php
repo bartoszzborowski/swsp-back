@@ -2,6 +2,7 @@
 
 namespace App\GraphQL\Queries;
 
+use App\GraphQL\Types\UserType;
 use App\Models\User;
 use Closure;
 use Rebing\GraphQL\Support\Facades\GraphQL;
@@ -12,12 +13,12 @@ use Rebing\GraphQL\Support\Query;
 class UsersQuery extends Query
 {
     protected $attributes = [
-        'name' => 'Users query'
+        'name' => 'users'
     ];
 
     public function type(): Type
     {
-        return Type::listOf(GraphQL::type('user'));
+        return Type::listOf(GraphQL::type(UserType::TYPE_NAME));
     }
 
     public function args(): array
@@ -30,13 +31,13 @@ class UsersQuery extends Query
 
     public function resolve($root, $args, $context, ResolveInfo $resolveInfo, Closure $getSelectFields)
     {
-        if (isset($args['id'])) {
-            return User::where('id' , $args['id'])->get();
-        }
-
-        if (isset($args['email'])) {
-            return User::where('email', $args['email'])->get();
-        }
+//        if (isset($args['id'])) {
+//            return User::where('id' , $args['id'])->get();
+//        }
+//
+//        if (isset($args['email'])) {
+//            return User::where('email', $args['email'])->get();
+//        }
 
         return User::all();
     }

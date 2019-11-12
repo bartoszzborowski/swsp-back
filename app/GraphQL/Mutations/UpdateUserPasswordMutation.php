@@ -2,6 +2,7 @@
 
 namespace App\GraphQL\Mutations;
 
+use App\GraphQL\Types\UserType;
 use CLosure;
 use App\Models\User;
 use GraphQL\Type\Definition\Type;
@@ -17,7 +18,7 @@ class UpdateUserPasswordMutation extends Mutation
 
     public function type(): Type
     {
-        return GraphQL::type('user');
+        return GraphQL::type(UserType::TYPE_NAME);
     }
 
     protected function rules(array $args = []): array

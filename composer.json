@@ -10,11 +10,14 @@
     "require": {
         "php": "^7.2",
         "babenkoivan/scout-elasticsearch-driver": "^4.0",
+        "barryvdh/laravel-cors": "^0.11.4",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
+        "prettus/l5-repository": "^2.6",
         "rebing/graphql-laravel": "^3.1",
-        "santigarcor/laratrust": "5.2.*"
+        "santigarcor/laratrust": "5.2.*",
+        "tymon/jwt-auth": "^1.0"
     },
     "require-dev": {
         "facade/ignition": "^1.4",

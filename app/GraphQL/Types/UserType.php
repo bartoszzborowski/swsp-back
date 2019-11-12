@@ -9,8 +9,10 @@ use Rebing\GraphQL\Support\Type as GraphQLType;
 
 class UserType extends GraphQLType
 {
+    const TYPE_NAME = 'UserType';
+
     protected $attributes = [
-        'name'        => 'User',
+        'name'        => self::TYPE_NAME,
         'description' => 'A user',
         'model'       => User::class,
     ];
@@ -34,10 +36,10 @@ class UserType extends GraphQLType
                 }
             ],
             // Uses the 'getIsMeAttribute' function on our custom User model
-            'isMe'  => [
-                'type'        => Type::boolean(),
+            'token'  => [
+                'type'        => Type::string(),
                 'description' => 'True, if the queried user is the current user',
-                'selectable'  => false, // Does not try to query this from the database
+//                'selectable'  => false, // Does not try to query this from the database
             ]
         ];
     }

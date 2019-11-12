@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Closure;
 use GraphQL\Type\Definition\ResolveInfo;
 
-class UsersQuery extends Query
+class sQuery extends Query
 {
     public function authorize($root, array $args, $ctx, ResolveInfo $resolveInfo = null, Closure $getSelectFields = null): bool
     {
