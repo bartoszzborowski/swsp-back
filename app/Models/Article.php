@@ -6,6 +6,15 @@ use App\MyIndexConfigurator;
 use Illuminate\Database\Eloquent\Model;
 use ScoutElastic\Searchable;
 
+/**
+ * App\Models\Article
+ *
+ * @property \ScoutElastic\Highlight|null $highlight
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Article newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Article newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Article query()
+ * @mixin \Eloquent
+ */
 class Article extends Model
 {
     use Searchable;

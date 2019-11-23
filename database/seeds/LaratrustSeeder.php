@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use Faker\Factory as Faker;
 
 class LaratrustSeeder extends Seeder
 {
@@ -13,6 +14,7 @@ class LaratrustSeeder extends Seeder
      */
     public function run()
     {
+        $faker = Faker::create();
         $this->command->info('Truncating User, Role and Permission tables');
         $this->truncateLaratrustTables();
 
@@ -58,7 +60,11 @@ class LaratrustSeeder extends Seeder
             $user = \App\Models\User::create([
                 'name' => ucwords(str_replace('_', ' ', $key)),
                 'email' => $key.'@app.com',
-                'password' => bcrypt('password')
+                'password' => bcrypt('password'),
+                'address' => $faker->address,
+                'phone' => $faker->phoneNumber,
+                'birthday' => $faker->date(),
+                'blood_group' => "ab",
             ]);
 
             $user->attachRole($role);
@@ -77,6 +83,8 @@ class LaratrustSeeder extends Seeder
                         'email' => $key.'@app.com',
                         'password' => bcrypt('password'),
                         'remember_token' => Str::random(10),
+                        'address' => $faker->address,
+                        'phone' => $faker->phoneNumber,
                     ]);
                     $permissions = [];
 
