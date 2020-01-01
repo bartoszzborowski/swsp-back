@@ -29,26 +29,6 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
  * @property-read int|null $permissions_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Role[] $roles
  * @property-read int|null $roles_count
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User orWherePermissionIs($permission = '')
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User orWhereRoleIs($role = '', $team = null)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User query()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereAddress($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereBirthday($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereBloodGroup($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereEmail($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereEmailVerifiedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User wherePassword($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User wherePermissionIs($permission = '', $boolean = 'and')
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User wherePhone($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereRememberToken($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereRoleIs($role = '', $team = null, $boolean = 'and')
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereSchoolId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class User extends Authenticatable implements JWTSubject
@@ -56,13 +36,25 @@ class User extends Authenticatable implements JWTSubject
     use LaratrustUserTrait;
     use Notifiable;
 
+    const ID = 'id';
+    const NAME = 'name';
+    const EMAIL = 'email';
+    const EMAIL_VERIFIED_AT = 'email_verified_at';
+    const ADDRESS = 'address';
+    const PHONE = 'phone';
+    const BIRTHDAY = 'birthday';
+    const BLOOD_GROUP = 'blood_group';
+    const SCHOOL_ID = 'school_id';
+    const REMEMBER_TOKEN = 'remember_token';
+    const TOKEN = 'token';
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'name', 'phone', 'address', 'blood_group',
     ];
 
     /**

@@ -2,7 +2,8 @@
 
 namespace App\GraphQL\Mutations;
 
-use App\GraphQL\Types\Input\UserLoginType;
+use App\Constants\GraphQL as GraphQLConstant;
+use App\GraphQL\Types\Input\UserRegisterType;
 use App\GraphQL\Types\Output\UserType;
 use App\Models\User;
 use App\Repository\UserRepository;
@@ -10,10 +11,11 @@ use Illuminate\Support\Arr;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use GraphQL\Type\Definition\Type as GraphqlType;
 use Rebing\GraphQL\Support\Mutation;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
-class LoginUser extends Mutation
+class RegisterUser extends Mutation
 {
-    const MUTATION_NAME = 'login';
+    const MUTATION_NAME = 'register';
 
     protected $userRepository;
 
@@ -34,7 +36,9 @@ class LoginUser extends Mutation
     public function args(): array
     {
         return [
-            ['name' => 'input', 'type' => GraphQL::type(UserLoginType::TYPE_NAME)]
+            [
+                'name' => GraphQLConstant::INPUT_ARG_NAME,
+                'type' => GraphQL::type(UserRegisterType::TYPE_NAME)]
         ];
     }
 
@@ -57,17 +61,15 @@ class LoginUser extends Mutation
     public function resolve($root, $args)
     {
         $args = Arr::get($args, 'input');
+        $args['password'] = bcrypt(Arr::get($args, 'password'));
 
-        $user = $this->userRepository->findByField('email', $args['email'])->first();
+        $user = $this->userRepository->create($args);
 
-        $credentials = Arr::only($args, [
-           'email', 'password'
-        ]);
-
-        if ($user && $token = auth()->attempt($credentials)) {
-            $user[User::TOKEN] = $token;
+        if ($user) {
+            $user[User::TOKEN] = JWTAuth::fromUser($user);
             return $user;
         }
-        throw new \Exception('Error login');
+
+        throw new \Exception('Register not successful');
     }
 }

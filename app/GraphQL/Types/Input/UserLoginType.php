@@ -1,6 +1,6 @@
 <?php
 
-namespace App\GraphQL\Types;
+namespace App\GraphQL\Types\Input;
 
 use App\Models\User;
 use Rebing\GraphQL\Support\Type as GraphQLType;
@@ -24,10 +24,10 @@ class UserLoginType extends GraphQLType
     public function fields(): array
     {
         return [
-            'email' => [
+            self::FIELD_EMAIL => [
                 'type' => Type::string()
             ],
-            'password' => [
+            self::FIELD_PASSWORD => [
                 'type' => Type::string()
             ]
         ];

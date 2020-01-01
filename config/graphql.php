@@ -97,13 +97,8 @@ return [
     //
     'schemas' => [
         'default' => [
-            'query' => [
-                'users' => App\GraphQL\Queries\UsersQuery::class
-            ],
-            'mutation' => [
-                'updateUserPassword' => App\GraphQL\Mutations\UpdateUserPasswordMutation::class,
-                'userLogin' => App\GraphQL\Mutations\LoginUser::class
-            ],
+            'query' => \App\GraphQL\GraphqlConfig::queryList(),
+            'mutation' => \App\GraphQL\GraphqlConfig::mutationList(),
             'middleware' => [],
             'method'     => ['get', 'post'],
         ],
@@ -124,12 +119,7 @@ return [
 //        // \Rebing\GraphQL\Support\UploadType::class,
 //    ],
 
-    'types' => [
-        \Rebing\GraphQL\Support\UploadType::class,
-        'UserType' => App\GraphQL\Types\UserType::class,
-        'UserLoginInputType' => App\GraphQL\Types\UserLoginType::class,
-        'ReviewInput' => ReviewInput::class
-    ],
+    'types' => \App\GraphQL\GraphqlConfig::typesList(),
 
     // The types will be loaded on demand. Default is to load all types on each request
     // Can increase performance on schemes with many types

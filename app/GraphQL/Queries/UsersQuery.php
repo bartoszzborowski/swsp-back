@@ -2,7 +2,7 @@
 
 namespace App\GraphQL\Queries;
 
-use App\GraphQL\Types\UserType;
+use App\GraphQL\Types\Output\UserType;
 use App\Models\User;
 use Closure;
 use Rebing\GraphQL\Support\Facades\GraphQL;

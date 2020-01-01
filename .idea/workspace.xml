@@ -2,9 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81b3004e-5d70-4ded-bd9c-ec2412262d4f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/GraphqlConfig.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/RegisterUser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/UserRegisterType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phpcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/swsp-back.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/swsp-back.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/GraphQL/Mutations/LoginUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/LoginUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/GraphQL/Mutations/UpdateUserPasswordMutation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/UpdateUserPasswordMutation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/GraphQL/Queries/UsersQuery.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Queries/UsersQuery.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/GraphQL/Types/UserLoginType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/UserLoginType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/GraphQL/Types/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Types/Output/UserType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/GraphQL/UsersQuery.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/graphql.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/graphql.php" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -152,46 +165,53 @@
   </component>
   <component name="ProjectId" id="1S9PDMOQTgt16Z9Z99toOfR7Foh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app" />
-      <recent name="$PROJECT_DIR$/app/GraphQL/Mutations" />
-      <recent name="E:\Projekt\swsp-back" />
-      <recent name="$PROJECT_DIR$/resources/views" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/GraphQL/Types/Output" />
+      <recent name="$PROJECT_DIR$/app/GraphQL/Types/Input" />
       <recent name="$PROJECT_DIR$/database/migrations" />
       <recent name="$PROJECT_DIR$/database/migrations/onHold" />
       <recent name="E:\Projekt\swsp-back\app\Models" />
-      <recent name="E:\Projekt\swsp-back" />
-      <recent name="E:\Projekt\swsp-back\storage\logs" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/app/GraphQL/Types" />
+      <recent name="$PROJECT_DIR$/app/GraphQL/Mutations" />
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="E:\Projekt\swsp-back" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -215,7 +235,15 @@
       <workItem from="1574102251931" duration="461000" />
       <workItem from="1574239024626" duration="1743000" />
       <workItem from="1574510482391" duration="14097000" />
-      <workItem from="1574533502205" duration="12000" />
+      <workItem from="1574533502205" duration="7304000" />
+      <workItem from="1574879353515" duration="2017000" />
+      <workItem from="1575032771601" duration="8817000" />
+      <workItem from="1575273978549" duration="604000" />
+      <workItem from="1575286139570" duration="64000" />
+      <workItem from="1576325541556" duration="19000" />
+      <workItem from="1576836388524" duration="647000" />
+      <workItem from="1576841978223" duration="948000" />
+      <workItem from="1577879755789" duration="1183000" />
     </task>
     <servers />
   </component>
@@ -234,5 +262,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="517" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1575286195561">
+      <screen x="0" y="23" width="1680" height="998" />
+    </state>
+    <state x="517" y="354" key="com.intellij.ide.util.TipDialog/0.23.1680.998/-1812.-1417.2560.1417/748.-1417.2560.1417@0.23.1680.998" timestamp="1575286195561" />
+    <state x="505" y="243" width="670" height="676" key="search.everywhere.popup" timestamp="1576325544058">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="505" y="243" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050/-476.-1440.2560.1440@0.0.1680.1050" timestamp="1576325544058" />
   </component>
 </project>
