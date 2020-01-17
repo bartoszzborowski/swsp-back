@@ -2,21 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81b3004e-5d70-4ded-bd9c-ec2412262d4f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/GraphqlConfig.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/RegisterUser.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/UserRegisterType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phpcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/CreateStudent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Queries/GetStudents.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/StudentType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Output/ParentType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Output/StudentType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/School.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repository/StudentRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/StudentsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/swsp-back.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/swsp-back.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GraphQL/Mutations/LoginUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/LoginUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GraphQL/Mutations/UpdateUserPasswordMutation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/UpdateUserPasswordMutation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GraphQL/Queries/UsersQuery.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Queries/UsersQuery.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GraphQL/Types/UserLoginType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/UserLoginType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GraphQL/Types/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Types/Output/UserType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GraphQL/UsersQuery.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Constants/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Constants/Database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Constants/GraphQL.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Constants/GraphQL.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/GraphQL/GraphqlConfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/GraphqlConfig.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/GraphQL/Mutations/RegisterUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/RegisterUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/GraphQL/Types/Input/UserRegisterType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/UserRegisterType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/GraphQL/Types/Output/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Types/Output/UserType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Student.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/StudentParent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/StudentParent.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/graphql.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/graphql.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repository/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,13 +53,36 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="DigitalOcean Db" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="DigitalOcean Db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="DigitalOcean Db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="swsp_tests: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="DigitalOcean Db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="swsp_tests: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="students: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.3.9">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
       <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
@@ -172,14 +208,22 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/GraphQL/Types/Input" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/GraphQL/Types/Input" />
+      <recent name="$PROJECT_DIR$/app/GraphQL/Mutations" />
+      <recent name="$PROJECT_DIR$/app/Repository" />
+      <recent name="$PROJECT_DIR$/app/Models" />
+      <recent name="$PROJECT_DIR$/app/GraphQL/Types/Output" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/GraphQL/Types/Output" />
       <recent name="$PROJECT_DIR$/app/GraphQL/Types/Input" />
@@ -187,19 +231,40 @@
       <recent name="$PROJECT_DIR$/database/migrations/onHold" />
       <recent name="E:\Projekt\swsp-back\app\Models" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/app/GraphQL/Types" />
-      <recent name="$PROJECT_DIR$/app/GraphQL/Mutations" />
-      <recent name="$PROJECT_DIR$/app" />
-      <recent name="E:\Projekt\swsp-back" />
-    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHPUnit.StudentsTest.testCreateStudent">
+    <configuration name="StudentsTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\StudentsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/StudentsTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="StudentsTest.testCreateStudent" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\StudentsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/StudentsTest.php" method="testCreateStudent" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="StudentsTest.testCreateUser" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\StudentsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/StudentsTest.php" method="testCreateUser" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="StudentsTest.testGetStudents" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\StudentsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/StudentsTest.php" method="testGetStudents" scope="Method" />
+      <method v="2" />
+    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <configuration name="GetStudents.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/GraphQL/Queries/GetStudents.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.StudentsTest.testCreateStudent" />
+        <item itemvalue="PHPUnit.StudentsTest.testCreateUser" />
+        <item itemvalue="PHPUnit.StudentsTest.testGetStudents" />
+        <item itemvalue="PHP Script.GetStudents.php" />
+        <item itemvalue="PHPUnit.StudentsTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -243,7 +308,13 @@
       <workItem from="1576325541556" duration="19000" />
       <workItem from="1576836388524" duration="647000" />
       <workItem from="1576841978223" duration="948000" />
-      <workItem from="1577879755789" duration="1183000" />
+      <workItem from="1577879755789" duration="13317000" />
+      <workItem from="1578383753480" duration="4208000" />
+      <workItem from="1578395059932" duration="3826000" />
+      <workItem from="1578565791283" duration="167000" />
+      <workItem from="1578565998276" duration="255000" />
+      <workItem from="1578583557837" duration="1198000" />
+      <workItem from="1579166381916" duration="3580000" />
     </task>
     <servers />
   </component>
@@ -264,13 +335,101 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="506" y="-1158" width="620" height="876" key="#PHP" timestamp="1578155950390">
+      <screen x="-476" y="-1440" width="2560" height="1440" />
+    </state>
+    <state x="506" y="-1158" width="620" height="876" key="#PHP/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578155950390" />
+    <state x="2047" y="-935" key="#StudentsTest.testCreateUser" timestamp="1579248499501">
+      <screen x="1680" y="-1825" width="1440" height="2560" />
+    </state>
+    <state x="2047" y="-935" key="#StudentsTest.testCreateUser/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1579248499501" />
+    <state x="451" y="-1118" key="#StudentsTest.testUpdateEventName" timestamp="1578155951158">
+      <screen x="-476" y="-1440" width="2560" height="1440" />
+    </state>
+    <state x="451" y="-1118" key="#StudentsTest.testUpdateEventName/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578155951158" />
+    <state x="404" y="-1056" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578150733073">
+      <screen x="-476" y="-1440" width="2560" height="1440" />
+    </state>
+    <state x="404" y="-1056" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578150733073" />
+    <state x="1780" y="-1725" width="1240" height="2360" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1579250437359">
+      <screen x="1680" y="-1825" width="1440" height="2560" />
+    </state>
+    <state x="1780" y="-1725" width="1240" height="2360" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1579250437359" />
+    <state x="543" y="-921" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578151107796">
+      <screen x="-476" y="-1440" width="2560" height="1440" />
+    </state>
+    <state x="543" y="-921" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578151107796" />
+    <state x="590" y="-998" key="#com.intellij.ide.util.MemberChooser" timestamp="1578169544474">
+      <screen x="-476" y="-1440" width="2560" height="1440" />
+    </state>
+    <state x="590" y="-998" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578169544474" />
+    <state x="2162" y="-1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1578385521847">
+      <screen x="1680" y="-1825" width="1440" height="2560" />
+    </state>
+    <state x="2162" y="-1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1578385521847" />
+    <state x="542" y="-959" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1578158644289">
+      <screen x="-476" y="-1440" width="2560" height="1440" />
+    </state>
+    <state x="542" y="-959" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578158644289" />
+    <state x="2188" y="-611" key="#com.jetbrains.php.lang.intentions.PhpImportClassDialog#" timestamp="1578471464212">
+      <screen x="1680" y="-1825" width="1440" height="2560" />
+    </state>
+    <state x="2188" y="-611" key="#com.jetbrains.php.lang.intentions.PhpImportClassDialog#/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1578471464212" />
+    <state width="1396" height="553" key="GridCell.Tab.0.bottom" timestamp="1579250439903">
+      <screen x="1680" y="-1825" width="1440" height="2560" />
+    </state>
+    <state width="2516" height="388" key="GridCell.Tab.0.bottom/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578169596675" />
+    <state width="1396" height="553" key="GridCell.Tab.0.bottom/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1579250439903" />
+    <state width="1396" height="553" key="GridCell.Tab.0.center" timestamp="1579250439898">
+      <screen x="1680" y="-1825" width="1440" height="2560" />
+    </state>
+    <state width="2516" height="388" key="GridCell.Tab.0.center/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578169596672" />
+    <state width="1396" height="553" key="GridCell.Tab.0.center/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1579250439898" />
+    <state width="1396" height="553" key="GridCell.Tab.0.left" timestamp="1579250439896">
+      <screen x="1680" y="-1825" width="1440" height="2560" />
+    </state>
+    <state width="2516" height="388" key="GridCell.Tab.0.left/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578169596670" />
+    <state width="1396" height="553" key="GridCell.Tab.0.left/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1579250439896" />
+    <state width="1396" height="553" key="GridCell.Tab.0.right" timestamp="1579250439901">
+      <screen x="1680" y="-1825" width="1440" height="2560" />
+    </state>
+    <state width="2516" height="388" key="GridCell.Tab.0.right/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578169596673" />
+    <state width="1396" height="553" key="GridCell.Tab.0.right/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1579250439901" />
+    <state x="313" y="-1072" key="SettingsEditor" timestamp="1578147054883">
+      <screen x="-476" y="-1440" width="2560" height="1440" />
+    </state>
+    <state x="313" y="-1072" key="SettingsEditor/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578147054883" />
+    <state width="500" height="792" key="SwitcherDM" timestamp="1578472336680">
+      <screen x="1680" y="-1825" width="1440" height="2560" />
+    </state>
+    <state width="539" height="445" key="SwitcherDM/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578168315400" />
+    <state width="500" height="792" key="SwitcherDM/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1578472336680" />
+    <state x="533" y="-1035" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1578159420300">
+      <screen x="-476" y="-1440" width="2560" height="1440" />
+    </state>
+    <state x="533" y="-1035" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578159420300" />
+    <state x="685" y="-980" width="264" height="520" key="com.intellij.database.view.ui.DbObjectDialog" timestamp="1578155609801">
+      <screen x="-476" y="-1440" width="2560" height="1440" />
+    </state>
+    <state x="685" y="-980" width="264" height="520" key="com.intellij.database.view.ui.DbObjectDialog/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578155609801" />
     <state x="517" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1575286195561">
       <screen x="0" y="23" width="1680" height="998" />
     </state>
     <state x="517" y="354" key="com.intellij.ide.util.TipDialog/0.23.1680.998/-1812.-1417.2560.1417/748.-1417.2560.1417@0.23.1680.998" timestamp="1575286195561" />
-    <state x="505" y="243" width="670" height="676" key="search.everywhere.popup" timestamp="1576325544058">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="2215" y="-997" width="801" height="904" key="find.popup" timestamp="1578385630386">
+      <screen x="1680" y="-1825" width="1440" height="2560" />
     </state>
+    <state x="475" y="-974" width="657" height="508" key="find.popup/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578159480615" />
+    <state x="2215" y="-997" width="801" height="904" key="find.popup/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1578385630386" />
+    <state x="2065" y="-287" key="run.anything.popup" timestamp="1579250433140">
+      <screen x="1680" y="-1825" width="1440" height="2560" />
+    </state>
+    <state x="2065" y="-287" key="run.anything.popup/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1579250433140" />
+    <state x="2113" y="-1233" width="670" height="1650" key="search.everywhere.popup" timestamp="1579249812385">
+      <screen x="1680" y="-1825" width="1440" height="2560" />
+    </state>
+    <state x="294" y="-1107" width="1021" height="928" key="search.everywhere.popup/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578169534048" />
     <state x="505" y="243" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050/-476.-1440.2560.1440@0.0.1680.1050" timestamp="1576325544058" />
+    <state x="2113" y="-1233" width="670" height="1650" key="search.everywhere.popup/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1579249812385" />
   </component>
 </project>

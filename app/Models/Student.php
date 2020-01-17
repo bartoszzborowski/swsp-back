@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Constants\Database;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
  * App\Models\Student
@@ -30,4 +31,15 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     protected $table = Database::STUDENTS;
+
+    protected $fillable = [
+        'user_id',
+        'parent_id',
+        'school_id',
+    ];
+
+    public function user(): HasOne
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 }

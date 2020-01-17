@@ -15,7 +15,7 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 
 class RegisterUser extends Mutation
 {
-    const MUTATION_NAME = 'register';
+    public const MUTATION_NAME = 'register';
 
     protected $userRepository;
 

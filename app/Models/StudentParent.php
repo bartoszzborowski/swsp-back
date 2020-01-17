@@ -28,4 +28,52 @@ use Illuminate\Database\Eloquent\Model;
 class StudentParent extends Model
 {
     protected $table = Database::PARENT;
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getUserId(): ?int
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getStudentId(): ?int
+    {
+        return $this->student_id;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getSchoolId(): ?int
+    {
+        return $this->school_id;
+    }
+
+    /**
+     * @return \Illuminate\Support\Carbon|null
+     */
+    public function getCreatedAt(): ?\Illuminate\Support\Carbon
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * @return \Illuminate\Support\Carbon|null
+     */
+    public function getUpdatedAt(): ?\Illuminate\Support\Carbon
+    {
+        return $this->updated_at;
+    }
 }

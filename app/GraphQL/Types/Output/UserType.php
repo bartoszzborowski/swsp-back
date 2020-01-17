@@ -9,7 +9,7 @@ use Rebing\GraphQL\Support\Type as GraphQLType;
 
 class UserType extends GraphQLType
 {
-    const TYPE_NAME = 'UserType';
+    public const TYPE_NAME = 'UserType';
 
     protected $attributes = [
         'name'        => self::TYPE_NAME,
@@ -23,10 +23,6 @@ class UserType extends GraphQLType
             'id'    => [
                 'type'        => Type::nonNull(Type::string()),
                 'description' => 'The id of the user',
-                // Use 'alias', if the database column is different from the type name.
-                // This is supported for discrete values as well as relations.
-                // - you can also use `DB::raw()` to solve more complex issues
-                // - or a callback returning the value (string or `DB::raw()` result)
             ],
             'email' => [
                 'type'        => Type::string(),

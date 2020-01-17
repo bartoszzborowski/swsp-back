@@ -4,11 +4,11 @@ namespace App\Constants;
 
 class GraphQL
 {
-    const INPUT_ARG_NAME = 'input';
-    const FIELD_ARG_NAME = 'input';
-    const FILTER_ARG_NAME = 'filters';
-    const SORT_ARG_NAME = 'sort';
-    const LIMIT_ARG_NAME = 'limit';
-    const PAGINATION_ARG_NAME = 'pagination';
-    const OUTPUT_NAME = 'data';
+    public const INPUT_ARG_NAME = 'input';
+    public const FIELD_ARG_NAME = 'input';
+    public const FILTER_ARG_NAME = 'filters';
+    public const SORT_ARG_NAME = 'sort';
+    public const LIMIT_ARG_NAME = 'limit';
+    public const PAGINATION_ARG_NAME = 'pagination';
+    public const OUTPUT_NAME = 'data';
 }
