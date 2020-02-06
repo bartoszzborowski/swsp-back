@@ -2,34 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81b3004e-5d70-4ded-bd9c-ec2412262d4f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/CreateStudent.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Queries/GetStudents.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/StudentType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Output/ParentType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Output/StudentType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/School.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repository/StudentRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Feature/StudentsTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/DeleteStudent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/UpdateStudent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Queries/Query.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/PaginationType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/UpdateStudentType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repository/BaseRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Services/StudentService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/swsp-back.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/swsp-back.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Constants/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Constants/Database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Constants/GraphQL.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Constants/GraphQL.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/GraphQL/GraphqlConfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/GraphqlConfig.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GraphQL/Mutations/RegisterUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/RegisterUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GraphQL/Types/Input/UserRegisterType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/UserRegisterType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GraphQL/Types/Output/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Types/Output/UserType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/GraphQL/Queries/GetStudents.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Queries/GetStudents.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/StudentParent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/StudentParent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repository/StudentRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repository/StudentRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repository/UserRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/BaseSchoolStructureSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/BaseSchoolStructureSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/StudentsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/StudentsTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +123,6 @@
       <path value="$PROJECT_DIR$/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/vendor/facade/ignition" />
       <path value="$PROJECT_DIR$/vendor/facade/flare-client-php" />
-      <path value="$PROJECT_DIR$/vendor/erusev/parsedown" />
       <path value="$PROJECT_DIR$/vendor/react/promise" />
       <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
       <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
@@ -197,6 +189,9 @@
       <path value="$PROJECT_DIR$/vendor/barryvdh/reflection-docblock" />
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-ide-helper" />
       <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
+      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/vendor/league/commonmark-ext-table" />
+      <path value="$PROJECT_DIR$/vendor/league/commonmark" />
     </include_path>
   </component>
   <component name="ProjectId" id="1S9PDMOQTgt16Z9Z99toOfR7Foh" />
@@ -210,20 +205,13 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/GraphQL/Types/Input" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/GraphQL/Mutations" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/GraphQL/Types/Input" />
-      <recent name="$PROJECT_DIR$/app/GraphQL/Mutations" />
-      <recent name="$PROJECT_DIR$/app/Repository" />
-      <recent name="$PROJECT_DIR$/app/Models" />
-      <recent name="$PROJECT_DIR$/app/GraphQL/Types/Output" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/GraphQL/Types/Output" />
       <recent name="$PROJECT_DIR$/app/GraphQL/Types/Input" />
@@ -231,8 +219,15 @@
       <recent name="$PROJECT_DIR$/database/migrations/onHold" />
       <recent name="E:\Projekt\swsp-back\app\Models" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/GraphQL/Mutations" />
+      <recent name="$PROJECT_DIR$/app/GraphQL/Types/Input" />
+      <recent name="$PROJECT_DIR$/app/Repository" />
+      <recent name="$PROJECT_DIR$/app/Models" />
+      <recent name="$PROJECT_DIR$/app/GraphQL/Types/Output" />
+    </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.StudentsTest.testCreateStudent">
+  <component name="RunManager" selected="PHPUnit.StudentsTest">
     <configuration name="StudentsTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Unit\StudentsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/StudentsTest.php" scope="Class" />
       <method v="2" />
@@ -241,28 +236,29 @@
       <TestRunner class="Tests\Unit\StudentsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/StudentsTest.php" method="testCreateStudent" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="StudentsTest.testCreateUser" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Unit\StudentsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/StudentsTest.php" method="testCreateUser" scope="Method" />
+    <configuration name="StudentsTest.testDeleteStudents" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\StudentsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/StudentsTest.php" method="testDeleteStudents" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="StudentsTest.testGetStudents" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Unit\StudentsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/StudentsTest.php" method="testGetStudents" scope="Method" />
       <method v="2" />
     </configuration>
+    <configuration name="StudentsTest.testUpdateEventName" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\StudentsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/StudentsTest.php" method="testUpdateEventName" scope="Method" />
+      <method v="2" />
+    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
-    <configuration name="GetStudents.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/GraphQL/Queries/GetStudents.php">
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.StudentsTest.testCreateStudent" />
-        <item itemvalue="PHPUnit.StudentsTest.testCreateUser" />
-        <item itemvalue="PHPUnit.StudentsTest.testGetStudents" />
-        <item itemvalue="PHP Script.GetStudents.php" />
         <item itemvalue="PHPUnit.StudentsTest" />
+        <item itemvalue="PHPUnit.StudentsTest.testGetStudents" />
+        <item itemvalue="PHPUnit.StudentsTest.testDeleteStudents" />
+        <item itemvalue="PHPUnit.StudentsTest.testUpdateEventName" />
+        <item itemvalue="PHPUnit.StudentsTest.testCreateStudent" />
       </list>
     </recent_temporary>
   </component>
@@ -314,7 +310,15 @@
       <workItem from="1578565791283" duration="167000" />
       <workItem from="1578565998276" duration="255000" />
       <workItem from="1578583557837" duration="1198000" />
-      <workItem from="1579166381916" duration="3580000" />
+      <workItem from="1579166381916" duration="4103000" />
+      <workItem from="1579281155445" duration="10606000" />
+      <workItem from="1579518140654" duration="12000" />
+      <workItem from="1579706519915" duration="918000" />
+      <workItem from="1579850696952" duration="596000" />
+      <workItem from="1580930890681" duration="2302000" />
+      <workItem from="1580977366899" duration="38000" />
+      <workItem from="1580977459045" duration="743000" />
+      <workItem from="1580980483301" duration="1135000" />
     </task>
     <servers />
   </component>
@@ -343,66 +347,75 @@
       <screen x="1680" y="-1825" width="1440" height="2560" />
     </state>
     <state x="2047" y="-935" key="#StudentsTest.testCreateUser/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1579248499501" />
-    <state x="451" y="-1118" key="#StudentsTest.testUpdateEventName" timestamp="1578155951158">
+    <state x="451" y="-1118" key="#StudentsTest.testUpdateEventName" timestamp="1579349479475">
       <screen x="-476" y="-1440" width="2560" height="1440" />
     </state>
-    <state x="451" y="-1118" key="#StudentsTest.testUpdateEventName/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578155951158" />
+    <state x="451" y="-1118" key="#StudentsTest.testUpdateEventName/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1579349479475" />
     <state x="404" y="-1056" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578150733073">
       <screen x="-476" y="-1440" width="2560" height="1440" />
     </state>
     <state x="404" y="-1056" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578150733073" />
-    <state x="1780" y="-1725" width="1240" height="2360" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1579250437359">
-      <screen x="1680" y="-1825" width="1440" height="2560" />
+    <state x="-298" y="-1384" width="2205" height="1328" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1579353773945">
+      <screen x="-476" y="-1440" width="2560" height="1440" />
     </state>
+    <state x="-298" y="-1384" width="2205" height="1328" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1579353773945" />
     <state x="1780" y="-1725" width="1240" height="2360" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1579250437359" />
     <state x="543" y="-921" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578151107796">
       <screen x="-476" y="-1440" width="2560" height="1440" />
     </state>
     <state x="543" y="-921" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578151107796" />
-    <state x="590" y="-998" key="#com.intellij.ide.util.MemberChooser" timestamp="1578169544474">
+    <state x="590" y="-998" key="#com.intellij.ide.util.MemberChooser" timestamp="1579347563664">
       <screen x="-476" y="-1440" width="2560" height="1440" />
     </state>
-    <state x="590" y="-998" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578169544474" />
+    <state x="590" y="-998" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1579347563664" />
     <state x="2162" y="-1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1578385521847">
       <screen x="1680" y="-1825" width="1440" height="2560" />
     </state>
     <state x="2162" y="-1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1578385521847" />
-    <state x="542" y="-959" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1578158644289">
+    <state x="542" y="-959" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1579363968644">
       <screen x="-476" y="-1440" width="2560" height="1440" />
     </state>
-    <state x="542" y="-959" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578158644289" />
+    <state x="542" y="-959" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1579363968644" />
     <state x="2188" y="-611" key="#com.jetbrains.php.lang.intentions.PhpImportClassDialog#" timestamp="1578471464212">
       <screen x="1680" y="-1825" width="1440" height="2560" />
     </state>
     <state x="2188" y="-611" key="#com.jetbrains.php.lang.intentions.PhpImportClassDialog#/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1578471464212" />
-    <state width="1396" height="553" key="GridCell.Tab.0.bottom" timestamp="1579250439903">
+    <state width="2516" height="380" key="GridCell.Tab.0.bottom" timestamp="1579517908920">
       <screen x="1680" y="-1825" width="1440" height="2560" />
     </state>
-    <state width="2516" height="388" key="GridCell.Tab.0.bottom/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578169596675" />
-    <state width="1396" height="553" key="GridCell.Tab.0.bottom/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1579250439903" />
-    <state width="1396" height="553" key="GridCell.Tab.0.center" timestamp="1579250439898">
+    <state width="2516" height="380" key="GridCell.Tab.0.bottom/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1579363972635" />
+    <state width="2516" height="380" key="GridCell.Tab.0.bottom/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1579517908920" />
+    <state width="1396" height="553" key="GridCell.Tab.0.bottom/0.23.1680.991@0.23.1680.991" timestamp="1579276053996" />
+    <state width="2516" height="380" key="GridCell.Tab.0.center" timestamp="1579517908917">
       <screen x="1680" y="-1825" width="1440" height="2560" />
     </state>
-    <state width="2516" height="388" key="GridCell.Tab.0.center/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578169596672" />
-    <state width="1396" height="553" key="GridCell.Tab.0.center/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1579250439898" />
-    <state width="1396" height="553" key="GridCell.Tab.0.left" timestamp="1579250439896">
+    <state width="2516" height="380" key="GridCell.Tab.0.center/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1579363972632" />
+    <state width="2516" height="380" key="GridCell.Tab.0.center/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1579517908917" />
+    <state width="1396" height="553" key="GridCell.Tab.0.center/0.23.1680.991@0.23.1680.991" timestamp="1579276053994" />
+    <state width="2516" height="380" key="GridCell.Tab.0.left" timestamp="1579517908916">
       <screen x="1680" y="-1825" width="1440" height="2560" />
     </state>
-    <state width="2516" height="388" key="GridCell.Tab.0.left/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578169596670" />
-    <state width="1396" height="553" key="GridCell.Tab.0.left/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1579250439896" />
-    <state width="1396" height="553" key="GridCell.Tab.0.right" timestamp="1579250439901">
+    <state width="2516" height="380" key="GridCell.Tab.0.left/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1579363972631" />
+    <state width="2516" height="380" key="GridCell.Tab.0.left/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1579517908916" />
+    <state width="1396" height="553" key="GridCell.Tab.0.left/0.23.1680.991@0.23.1680.991" timestamp="1579276053993" />
+    <state width="2516" height="380" key="GridCell.Tab.0.right" timestamp="1579517908919">
       <screen x="1680" y="-1825" width="1440" height="2560" />
     </state>
-    <state width="2516" height="388" key="GridCell.Tab.0.right/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578169596673" />
-    <state width="1396" height="553" key="GridCell.Tab.0.right/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1579250439901" />
+    <state width="2516" height="380" key="GridCell.Tab.0.right/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1579363972633" />
+    <state width="2516" height="380" key="GridCell.Tab.0.right/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1579517908919" />
+    <state width="1396" height="553" key="GridCell.Tab.0.right/0.23.1680.991@0.23.1680.991" timestamp="1579276053994" />
+    <state x="504" y="-913" key="NewPhpClassDialog" timestamp="1579353462118">
+      <screen x="-476" y="-1440" width="2560" height="1440" />
+    </state>
+    <state x="504" y="-913" key="NewPhpClassDialog/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1579353462118" />
     <state x="313" y="-1072" key="SettingsEditor" timestamp="1578147054883">
       <screen x="-476" y="-1440" width="2560" height="1440" />
     </state>
     <state x="313" y="-1072" key="SettingsEditor/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578147054883" />
-    <state width="500" height="792" key="SwitcherDM" timestamp="1578472336680">
-      <screen x="1680" y="-1825" width="1440" height="2560" />
+    <state width="539" height="445" key="SwitcherDM" timestamp="1579352071748">
+      <screen x="-476" y="-1440" width="2560" height="1440" />
     </state>
-    <state width="539" height="445" key="SwitcherDM/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578168315400" />
+    <state width="539" height="445" key="SwitcherDM/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1579352071748" />
     <state width="500" height="792" key="SwitcherDM/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1578472336680" />
     <state x="533" y="-1035" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1578159420300">
       <screen x="-476" y="-1440" width="2560" height="1440" />
@@ -412,9 +425,10 @@
       <screen x="-476" y="-1440" width="2560" height="1440" />
     </state>
     <state x="685" y="-980" width="264" height="520" key="com.intellij.database.view.ui.DbObjectDialog/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578155609801" />
-    <state x="517" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1575286195561">
-      <screen x="0" y="23" width="1680" height="998" />
+    <state x="1880" y="-1412" key="com.intellij.ide.util.TipDialog" timestamp="1580989138459">
+      <screen x="1680" y="-1825" width="1440" height="2560" />
     </state>
+    <state x="1880" y="-1412" key="com.intellij.ide.util.TipDialog/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1580989138459" />
     <state x="517" y="354" key="com.intellij.ide.util.TipDialog/0.23.1680.998/-1812.-1417.2560.1417/748.-1417.2560.1417@0.23.1680.998" timestamp="1575286195561" />
     <state x="2215" y="-997" width="801" height="904" key="find.popup" timestamp="1578385630386">
       <screen x="1680" y="-1825" width="1440" height="2560" />
@@ -425,11 +439,11 @@
       <screen x="1680" y="-1825" width="1440" height="2560" />
     </state>
     <state x="2065" y="-287" key="run.anything.popup/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1579250433140" />
-    <state x="2113" y="-1233" width="670" height="1650" key="search.everywhere.popup" timestamp="1579249812385">
-      <screen x="1680" y="-1825" width="1440" height="2560" />
+    <state x="294" y="-1107" width="1021" height="928" key="search.everywhere.popup" timestamp="1580939327858">
+      <screen x="-476" y="-1440" width="2560" height="1440" />
     </state>
-    <state x="294" y="-1107" width="1021" height="928" key="search.everywhere.popup/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578169534048" />
+    <state x="294" y="-1107" width="1021" height="928" key="search.everywhere.popup/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1580939327858" />
     <state x="505" y="243" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050/-476.-1440.2560.1440@0.0.1680.1050" timestamp="1576325544058" />
-    <state x="2113" y="-1233" width="670" height="1650" key="search.everywhere.popup/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1579249812385" />
+    <state x="2113" y="-1233" width="670" height="1650" key="search.everywhere.popup/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1579706530529" />
   </component>
 </project>

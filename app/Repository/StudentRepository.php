@@ -5,7 +5,6 @@ namespace App\Repository;
 use App\Models\Student;
 use App\Models\User;
 use GraphQL\Error\Error;
-use Prettus\Repository\Eloquent\BaseRepository;
 
 class StudentRepository extends BaseRepository
 {

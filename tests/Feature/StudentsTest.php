@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\GraphQL\Types\Input\PaginationType;
 use App\Models\School;
 use App\Models\Student;
 use App\Models\StudentParent;
@@ -34,47 +35,54 @@ class StudentsTest extends TestCase
         parent::setUp();
         /** @var School $baseSchool */
         $baseSchool = factory(School::class)->create();
-//        $userStudents = factory(User::class, 20)->create(['school_id' => $baseSchool->getId()]);
-//        $userParents = factory(User::class, 10)->create(['school_id' => $baseSchool->getId()]);
-//
-//        $students = new Collection();
-//        $parents = new Collection();
-//
-//        $userParents->each(static function ($parent) use ($parents, $baseSchool) {
-//            $parents->push(factory(StudentParent::class)->create(['school_id' => $baseSchool->getId(),
-//                'user_id' => $parent->getId()]));
-//        });
-//
-//        $userStudents->each(static function ($user, $index) use ($baseSchool, $students, $parents) {
-//            $students->push(factory(Student::class)->create(['school_id' => $baseSchool->getId(),
-//                'user_id' => $user->getId(), 'parent_id' => $parents->get($index % 10)->getId()]));
-//        });
-//
-//
-//        $this->students = $students;
-//        $this->parents = $parents;
+        $userStudents = factory(User::class, 10)->create(['school_id' => $baseSchool->getId()]);
+        $userParents = factory(User::class, 5)->create(['school_id' => $baseSchool->getId()]);
+
+        $students = new Collection();
+        $parents = new Collection();
+
+        $userParents->each(static function ($parent) use ($parents, $baseSchool) {
+            $parents->push(factory(StudentParent::class)->create(['school_id' => $baseSchool->getId(),
+                'user_id' => $parent->getId()]));
+        });
+
+        $userStudents->each(static function ($user, $index) use ($baseSchool, $students, $parents) {
+            $students->push(factory(Student::class)->create(['school_id' => $baseSchool->getId(),
+                'user_id' => $user->getId(), 'parent_id' => $parents->get($index % 5)->getId()]));
+        });
+
+        $this->students = $students;
+        $this->parents = $parents;
         $this->baseSchool = $baseSchool;
     }
 
     public function testGetStudents(): void
     {
         $graphql = <<<'GRAPHQL'
-            query{
-              students {
-                id,
-                user {
-                    name,
+            query($take: Int!, $page: Int!) {
+              students(pagination: { take: $take, page: $page }) {
+                data {
+                  id
+                  user {
+                    name
                     email
+                  }
                 }
               }
             }
             GRAPHQL;
 
+        $input = [
+            PaginationType::FIELD_TAKE => 10,
+            PaginationType::FIELD_PAGE => 1
+        ];
+
         $result = $this->graphql($graphql, [
+            'variables' => $input,
             'expectErrors' => false,
         ]);
 
-        $expectedResult['data']['students'] = $this->students->map(static function ($item) {
+        $expectedResult['data']['students']['data'] = $this->students->map(static function ($item) {
             return [
                 'id' => $item->id,
                 'user' => [
@@ -130,46 +138,69 @@ class StudentsTest extends TestCase
         $this->assertSame($expectedResult, $result);
     }
 
-    public function testUpdateEventName(): void
+    public function testUUpdateStudent(): void
     {
-//        $baseSchool = factory(School::class)->create();
-//        $user = factory(User::class)->create(['schoolId' => $baseSchool->id]);
-//        $graphql = <<<'GRAPHQL'
-//            mutation($input: UserInputType) {
-//              createUser(input: $input) {
-//                name,
-//                surname,
-//                admin,
-//                email
-//              }
-//            }
-//            GRAPHQL;
-//
-//
-//        $input = ['input' => [
-//            'name' => $user->name,
-//            'surname' => $user->surname,
-//            'email' => $user->email,
-//            'password' => $user->password,
-//            'base_city' => City::whereId($user->base_city)->first()->slug,
-//            'admin' => $user->admin,
-//        ]];
-//
-//        $result = $this->graphql($graphql, [
-//            'expectErrors' => false,
-//            'variables' => $input,
-//        ]);
-//
-//        $expectedResult = [
-//            'data' => [
-//                'createUser' => [
-//                    'name' => $user->name,
-//                    'surname' => $user->surname,
-//                    'admin' => $user->admin,
-//                    'email' => $user->email,
-//                ],
-//            ],
-//        ];
-//        $this->assertSame($expectedResult, $result);
+        $student = $this->students->first();
+        $newUser = factory(User::class)->make();
+
+        $graphql = <<<'GRAPHQL'
+            mutation($input: UpdateStudentInputType) {
+              updateStudent(input: $input) {
+                user {
+                    name,
+                    email
+                }
+              }
+            }
+            GRAPHQL;
+
+        $input = ['input' => [
+            'id' => $student->getId(),
+            'name' => $newUser->getName(),
+            'phone' => $newUser->getPhone(),
+            'address' => $newUser->getAddress(),
+            'email' => $newUser->getEmail(),
+            'password' => $newUser->getPassword(),
+            'blood_group' => $newUser->getBloodGroup(),
+            'school_id' => $this->baseSchool->getId()
+        ]];
+
+        $result = $this->graphql($graphql, [
+            'expectErrors' => false,
+            'variables' => $input
+        ]);
+
+        $expectedResult = [
+            'data' => [
+                'updateStudent' => [
+                    'user' => [
+                        'name' => $newUser->getName(),
+                        'email' => $newUser->getEmail()
+                    ]
+                ]
+            ]
+        ];
+
+        $this->assertSame($expectedResult, $result);
+    }
+
+    public function testDeleteStudents(): void
+    {
+        $graphql = <<<'GRAPHQL'
+            mutation($ids: [Int]) {
+              deleteStudents(ids: $ids)
+            }
+            GRAPHQL;
+
+        $input = [
+            'ids' => [$this->students->first()->getId(), $this->students->last()->getId()]
+        ];
+
+        $result = $this->graphql($graphql, [
+            'expectErrors' => false,
+            'variables' => $input
+        ]);
+
+        $this->assertTrue($result['data']['deleteStudents']);
     }
 }

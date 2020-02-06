@@ -42,4 +42,60 @@ class Student extends Model
     {
         return $this->hasOne(User::class, 'id', 'user_id');
     }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getUserId(): ?int
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getParentId(): ?int
+    {
+        return $this->parent_id;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getSchoolId(): ?int
+    {
+        return $this->school_id;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getCode(): ?string
+    {
+        return $this->code;
+    }
+
+    /**
+     * @return \Illuminate\Support\Carbon|null
+     */
+    public function getCreatedAt(): ?\Illuminate\Support\Carbon
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * @return \Illuminate\Support\Carbon|null
+     */
+    public function getUpdatedAt(): ?\Illuminate\Support\Carbon
+    {
+        return $this->updated_at;
+    }
 }

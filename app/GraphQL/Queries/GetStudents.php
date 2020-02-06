@@ -2,14 +2,14 @@
 
 namespace App\GraphQL\Queries;
 
+use App\Constants\GraphQL as GraphQLConstants;
+use App\GraphQL\Types\Input\PaginationType;
 use App\GraphQL\Types\Output\StudentType;
-use App\Models\User;
 use App\Repository\StudentRepository;
 use Closure;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
-use Rebing\GraphQL\Support\Query;
 
 class GetStudents extends Query
 {
@@ -21,29 +21,24 @@ class GetStudents extends Query
 
     public function type(): Type
     {
-        return Type::listOf(GraphQL::type(StudentType::TYPE_NAME));
+        return GraphQL::paginate(StudentType::TYPE_NAME);
     }
 
     public function args(): array
     {
         return [
-            'id' => ['name' => 'id', 'type' => Type::string()],
-            'email' => ['name' => 'email', 'type' => Type::string()]
+            [
+                'name' => GraphQLConstants::PAGINATION_ARG_NAME,
+                'type' => GraphQL::type(PaginationType::TYPE_NAME)
+            ],
         ];
     }
 
     public function resolve($root, $args, $context, ResolveInfo $resolveInfo, Closure $getSelectFields)
     {
+        [$take, $page] = $this->getPaginationFromQuery($args);
         /** @var StudentRepository $studentRepository */
         $studentRepository = app(StudentRepository::class);
-//        if (isset($args['id'])) {
-//            return User::where('id' , $args['id'])->get();
-//        }
-//
-//        if (isset($args['email'])) {
-//            return User::where('email', $args['email'])->get();
-//        }
-
-        return $studentRepository->all();
+        return $studentRepository->paginate($take, $page);
     }
 }
