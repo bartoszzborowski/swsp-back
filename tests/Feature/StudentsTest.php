@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\GraphQL\Types\Input\Filters\FiltersStudentType;
 use App\GraphQL\Types\Input\PaginationType;
 use App\Models\School;
 use App\Models\Student;
@@ -94,6 +95,46 @@ class StudentsTest extends TestCase
         $this->assertSame($expectedResult, $result);
     }
 
+
+    public function testGetStudentsById(): void
+    {
+        $student = $this->students->random();
+
+        $graphql = <<<'GRAPHQL'
+            query($take: Int!, $page: Int!, $id: Int) {
+              students(pagination: { take: $take, page: $page }, filters: { id: $id }) {
+                data {
+                  id
+                  user {
+                    name
+                    email
+                  }
+                }
+              }
+            }
+            GRAPHQL;
+
+        $input = [
+            PaginationType::FIELD_TAKE => 10,
+            PaginationType::FIELD_PAGE => 1,
+            FiltersStudentType::FIELD_ID => $student->getId(),
+        ];
+
+        $result = $this->graphql($graphql, [
+            'variables' => $input,
+            'expectErrors' => false,
+        ]);
+
+        $expectedResult['data']['students']['data'] = [[
+            'id' => $student->getId(),
+            'user' => [
+                'name' => $student->user->getName(),
+                'email' => $student->user->getEmail()
+            ]]];
+
+        $this->assertSame($expectedResult, $result);
+    }
+
     public function testCreateStudent(): void
     {
         /** @var User $user */
@@ -138,7 +179,7 @@ class StudentsTest extends TestCase
         $this->assertSame($expectedResult, $result);
     }
 
-    public function testUUpdateStudent(): void
+    public function testUpdateStudent(): void
     {
         $student = $this->students->first();
         $newUser = factory(User::class)->make();

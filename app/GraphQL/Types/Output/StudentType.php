@@ -27,8 +27,11 @@ class StudentType extends GraphQLType
             'user' => [
                 'type' => GraphQL::type(UserType::TYPE_NAME),
             ],
-            'parents' => [
+            'parent' => [
                 'type' => GraphQL::type(ParentType::TYPE_NAME)
+            ],
+            'classes' => [
+                'type' => GraphQL::type(ClassesType::TYPE_NAME)
             ]
         ];
     }

@@ -27,6 +27,7 @@ $factory->define(User::class, static function (Faker $faker, $args) {
         'phone' =>  $faker->phoneNumber,
         'birthday' =>  $faker->date('Y-m-d'),
         'blood_group' =>  'AB',
+        'gender' =>  $faker->randomElement([1,2]),
         'remember_token' => Str::random(10),
     ];
 });

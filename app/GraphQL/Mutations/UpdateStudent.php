@@ -71,7 +71,6 @@ class UpdateStudent extends Mutation
         $args = Arr::get($args, GraphQLConstant::INPUT_ARG_NAME);
         $studentId = Arr::get($args, UpdateStudentInputType::FIELD_STUDENT_ID);
         unset($args['id']);
-
         try {
             $student = $this->studentRepository->find($studentId, ['id', 'user_id']);
             $user = $this->userRepository->find($student->getUserId());

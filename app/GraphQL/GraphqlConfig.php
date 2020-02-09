@@ -8,12 +8,16 @@ use App\GraphQL\Mutations\LoginUser;
 use App\GraphQL\Mutations\RegisterUser;
 use App\GraphQL\Mutations\UpdateStudent;
 use App\GraphQL\Mutations\UpdateUserPasswordMutation;
+use App\GraphQL\Queries\GetClasses;
 use App\GraphQL\Queries\GetStudents;
 use App\GraphQL\Queries\UsersQuery;
+use App\GraphQL\Types\Input\Filters\FiltersStudentType;
+use App\GraphQL\Types\Input\Filters\FiltersType;
 use App\GraphQL\Types\Input\PaginationType;
 use App\GraphQL\Types\Input\UpdateStudentType as UpdateStudentInputType;
 use App\GraphQL\Types\Input\UserLoginType;
 use App\GraphQL\Types\Input\UserRegisterType;
+use App\GraphQL\Types\Output\ClassesType;
 use App\GraphQL\Types\Output\ParentType;
 use App\GraphQL\Types\Output\StudentType;
 use App\GraphQL\Types\Input\StudentType as StudentInputType;
@@ -25,7 +29,8 @@ class GraphqlConfig
     {
         return [
             'users' => UsersQuery::class,
-            GetStudents::class
+            GetStudents::class,
+            GetClasses::class
         ];
     }
 
@@ -53,7 +58,10 @@ class GraphqlConfig
             StudentType::class,
             StudentInputType::class,
             UpdateStudentInputType::class,
-            PaginationType::class
+            PaginationType::class,
+            FiltersType::class,
+            FiltersStudentType::class,
+            ClassesType::class,
         ];
     }
 }

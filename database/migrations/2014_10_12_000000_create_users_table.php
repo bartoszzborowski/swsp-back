@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
                 $table->string('phone')->nullable();
                 $table->string('birthday')->nullable();
                 $table->string('blood_group')->nullable();
+                $table->integer('gender')->nullable();
                 $table->unsignedBigInteger('school_id')->nullable();
                 $table->rememberToken();
                 $table->timestamps();

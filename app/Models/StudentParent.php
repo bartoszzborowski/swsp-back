@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Constants\Database;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
  * App\Models\StudentParent
@@ -28,6 +29,12 @@ use Illuminate\Database\Eloquent\Model;
 class StudentParent extends Model
 {
     protected $table = Database::PARENT;
+
+
+    public function user(): HasOne
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 
     /**
      * @return int

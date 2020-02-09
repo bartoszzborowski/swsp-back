@@ -48,6 +48,10 @@ class UserType extends GraphQLType
                 'type'        => Type::string(),
                 'description' => 'The blood group of user',
             ],
+            'gender' => [
+                'type'        => Type::int(),
+                'description' => 'The gender of user',
+            ],
             'token'  => [
                 'type'        => Type::string(),
                 'description' => 'True, if the queried user is the current user',

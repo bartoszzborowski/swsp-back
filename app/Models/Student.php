@@ -30,6 +30,8 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  */
 class Student extends Model
 {
+    public const ID = 'id';
+
     protected $table = Database::STUDENTS;
 
     protected $fillable = [
@@ -41,6 +43,16 @@ class Student extends Model
     public function user(): HasOne
     {
         return $this->hasOne(User::class, 'id', 'user_id');
+    }
+
+    public function classes(): HasOne
+    {
+        return $this->hasOne(Classes::class, 'id', 'classes_id');
+    }
+
+    public function parent(): HasOne
+    {
+        return $this->hasOne(StudentParent::class, 'id', 'parent_id');
     }
 
     /**

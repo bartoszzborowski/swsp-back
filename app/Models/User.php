@@ -20,6 +20,7 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
  * @property string|null $birthday
  * @property string|null $blood_group
  * @property int|null $school_id
+ * @property int|null $gender
  * @property string|null $remember_token
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
@@ -59,6 +60,7 @@ class User extends Authenticatable implements JWTSubject
     const ID = 'id';
     const NAME = 'name';
     const EMAIL = 'email';
+    const PASSWORD = 'email';
     const EMAIL_VERIFIED_AT = 'email_verified_at';
     const ADDRESS = 'address';
     const PHONE = 'phone';
@@ -66,6 +68,7 @@ class User extends Authenticatable implements JWTSubject
     const BLOOD_GROUP = 'blood_group';
     const SCHOOL_ID = 'school_id';
     const REMEMBER_TOKEN = 'remember_token';
+    const GENDER = 'gender';
     const TOKEN = 'token';
 
     /**
@@ -74,7 +77,15 @@ class User extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'name', 'phone', 'address', 'blood_group', 'school_id',
+        self::NAME,
+        self::EMAIL,
+        self::PASSWORD,
+        self::PHONE,
+        self::ADDRESS,
+        self::BIRTHDAY,
+        self::BLOOD_GROUP,
+        self::SCHOOL_ID,
+        self::GENDER,
     ];
 
     /**
@@ -262,5 +273,10 @@ class User extends Authenticatable implements JWTSubject
     public function getRolesCount(): ?int
     {
         return $this->roles_count;
+    }
+
+    public function getGender(): ?int
+    {
+        return $this->{self::GENDER};
     }
 }

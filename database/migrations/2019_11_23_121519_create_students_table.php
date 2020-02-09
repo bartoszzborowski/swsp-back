@@ -18,12 +18,14 @@ class CreateStudentsTable extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('parent_id')->nullable();
             $table->unsignedBigInteger('school_id')->nullable();
+            $table->unsignedBigInteger('classes_id')->nullable();
             $table->string('code')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('parent_id')->references('id')->on('parent');
             $table->foreign('school_id')->references('id')->on('schools')->onDelete('cascade');
+            $table->foreign('classes_id')->references('id')->on('classes');
         });
 
         Schema::table('parent', function (Blueprint $table) {
