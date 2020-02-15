@@ -21,8 +21,7 @@ class ParentType extends GraphQLType
     {
         return [
             'id' => [
-                'type' => Type::nonNull(Type::string()),
-                'description' => 'The id of the user',
+                'type' => Type::nonNull(Type::int()),
             ],
             'user' => [
                 'type' => GraphQL::type(UserType::TYPE_NAME),

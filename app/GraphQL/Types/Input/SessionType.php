@@ -4,15 +4,17 @@ namespace App\GraphQL\Types\Input;
 
 use App\Models\Student;
 use GraphQL\Type\Definition\Type;
+use Rebing\GraphQL\Support\Type as GraphQLType;
 
-class UpdateStudentType extends UserRegisterType
+class SessionType extends GraphQLType
 {
-    public const TYPE_NAME = 'UpdateStudentInputType';
+    public const TYPE_NAME = 'SessionInputType';
 
-    public const FIELD_PARENT_ID = 'parent_id';
+    public const FIELD_NAME = 'name';
+    public const FIELD_STATUS = 'status';
     public const FIELD_SCHOOL_ID = 'school_id';
-    public const FIELD_CLASSES_ID = 'classes_id';
-    public const FIELD_STUDENT_ID = 'id';
+
+    protected $inputObject = true;
 
     protected $attributes = [
         'name' => self::TYPE_NAME,
@@ -24,18 +26,15 @@ class UpdateStudentType extends UserRegisterType
         $fields = parent::fields();
 
         return array_merge($fields, [
-            self::FIELD_PARENT_ID => [
-                'type' => Type::int()
+            self::FIELD_NAME => [
+                'type' => Type::string()
             ],
             self::FIELD_SCHOOL_ID => [
                 'type' => Type::int()
             ],
-            self::FIELD_STUDENT_ID => [
+            self::FIELD_STATUS => [
                 'type' => Type::int()
-            ],
-            self::FIELD_CLASSES_ID => [
-                'type' => Type::int()
-            ],
+            ]
         ]);
     }
 }

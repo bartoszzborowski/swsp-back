@@ -2,26 +2,24 @@
 
 namespace App\GraphQL\Mutations;
 
-use App\Services\StudentService;
-use Closure;
+use App\Repository\SessionRepository;
 use GraphQL\Error\Error;
-use GraphQL\Type\Definition\ResolveInfo;
 use Illuminate\Support\Arr;
 use GraphQL\Type\Definition\Type as GraphqlType;
 use Rebing\GraphQL\Support\Mutation;
 
-class DeleteStudent extends Mutation
+class DeleteSession extends Mutation
 {
-    public const MUTATION_NAME = 'deleteStudents';
+    public const MUTATION_NAME = 'deleteSession';
 
     /**
-     * @var StudentService $studentService
+     * @var SessionRepository
      */
-    private $studentService;
+    private $sessionRepository;
 
-    public function __construct(StudentService $studentService)
+    public function __construct(SessionRepository $sessionRepository)
     {
-        $this->studentService = $studentService;
+        $this->sessionRepository = $sessionRepository;
     }
 
     protected $attributes = [
@@ -43,13 +41,13 @@ class DeleteStudent extends Mutation
         ];
     }
 
-    public function resolve($root, $args, $context, ResolveInfo $resolveInfo, Closure $getSelectFields)
+    public function resolve($root, $args)
     {
         $ids = Arr::get($args, 'ids');
 
         foreach ($ids as $id) {
             try {
-                $this->studentService->removeStudent($id);
+                $this->sessionRepository->delete($id);
                 return true;
             } catch (\Exception $e) {
                 return new Error($e->getMessage());

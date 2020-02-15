@@ -36,9 +36,7 @@ class LaratrustSeeder extends Seeder
 
             // Reading role permission modules
             foreach ($modules as $module => $value) {
-
                 foreach (explode(',', $value) as $p => $perm) {
-
                     $permissionValue = $mapPermission->get($perm);
 
                     $permissions[] = \App\Models\Permission::firstOrCreate([
@@ -59,6 +57,7 @@ class LaratrustSeeder extends Seeder
             // Create default user for each role
             $user = \App\Models\User::create([
                 'name' => ucwords(str_replace('_', ' ', $key)),
+                'last_name' => ucwords(str_replace('_', ' ', $key)),
                 'email' => $key.'@app.com',
                 'password' => bcrypt('password'),
                 'address' => $faker->address,
@@ -72,14 +71,13 @@ class LaratrustSeeder extends Seeder
 
         // Creating user with permissions
         if (!empty($userPermission)) {
-
             foreach ($userPermission as $key => $modules) {
-
                 foreach ($modules as $module => $value) {
 
                     // Create default user for each permission set
                     $user = \App\Models\User::create([
                         'name' => ucwords(str_replace('_', ' ', $key)),
+                        'last_name' => ucwords(str_replace('_', ' ', $key)),
                         'email' => $key.'@app.com',
                         'password' => bcrypt('password'),
                         'remember_token' => Str::random(10),
@@ -89,7 +87,6 @@ class LaratrustSeeder extends Seeder
                     $permissions = [];
 
                     foreach (explode(',', $value) as $p => $perm) {
-
                         $permissionValue = $mapPermission->get($perm);
 
                         $permissions[] = \App\Models\Permission::firstOrCreate([

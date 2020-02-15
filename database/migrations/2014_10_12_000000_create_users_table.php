@@ -14,9 +14,10 @@ class CreateUsersTable extends Migration
     public function up()
     {
         if (!Schema::hasTable('users')) {
-            Schema::create('users', function (Blueprint $table) {
+            Schema::create('users', static function (Blueprint $table) {
                 $table->bigIncrements('id');
                 $table->string('name');
+                $table->string('last_name');
                 $table->string('email')->unique();
                 $table->timestamp('email_verified_at')->nullable();
                 $table->string('password');
@@ -25,6 +26,7 @@ class CreateUsersTable extends Migration
                 $table->string('birthday')->nullable();
                 $table->string('blood_group')->nullable();
                 $table->integer('gender')->nullable();
+                $table->integer('marital')->nullable();
                 $table->unsignedBigInteger('school_id')->nullable();
                 $table->rememberToken();
                 $table->timestamps();

@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\Article;
+use App\Models\Student;
+use App\Models\StudentParent;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +20,11 @@ Route::get('/', function () {
 });
 
 Route::get('/article', function () {
-    $test = Article::search('aut dolores')->select(['title', 'body']);
+    $dupa = StudentParent::query()->paginate(5000, ['id', 'user_id'], 'test', 1);
+    $dupa->each(static function ($item) {
+        $item->searchable();
+    });
+    $test = Student::search('sebastia')->with('user');
 
-    dd($test->get());
-
+    dd($test->explain());
 });

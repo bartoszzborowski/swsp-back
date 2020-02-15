@@ -66,18 +66,19 @@ class CreateStudent extends Mutation
 //        ];
 //    }
 
-    public function resolve($root, $args, $context, ResolveInfo $resolveInfo, Closure $getSelectFields): Student
+    public function resolve($root, $args, $context, ResolveInfo $resolveInfo, Closure $getSelectFields)
     {
         $args = Arr::get($args, GraphQLConstant::INPUT_ARG_NAME);
         $schoolId = Arr::get($args, StudentInputType::FIELD_SCHOOL_ID);
         $parentId = Arr::get($args, StudentInputType::FIELD_PARENT_ID);
+        $classesId = Arr::get($args, StudentInputType::FIELD_CLASSES_ID);
 
         try {
             $user = $this->userRepository->create($args);
-            return $this->studentRepository->addNewStudent($user, $schoolId, $parentId);
+            return $this->studentRepository->addNewStudent($user, $schoolId, $parentId, $classesId);
         } catch (\Exception $e) {
             Log::info($e->getMessage());
-            new Error($e->getMessage());
+            return new Error($e->getMessage());
         }
     }
 }

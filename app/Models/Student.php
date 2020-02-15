@@ -3,8 +3,10 @@
 namespace App\Models;
 
 use App\Constants\Database;
+use App\Elasticsearch\Index\StudentIndexConfigurator;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use ScoutElastic\Searchable;
 
 /**
  * App\Models\Student
@@ -27,12 +29,56 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Student whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Student whereUserId($value)
  * @mixin \Eloquent
+ * @property int|null $classes_id
+ * @property-read \App\Models\Classes $classes
+ * @property-read \App\Models\StudentParent $parent
+ * @property-read \App\Models\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Student whereClassesId($value)
  */
 class Student extends Model
 {
+    use Searchable;
+
     public const ID = 'id';
 
     protected $table = Database::STUDENTS;
+
+    protected $indexConfigurator = StudentIndexConfigurator::class;
+
+    /**
+     * @var array
+     */
+    protected $searchRules = [
+        //
+    ];
+
+    // Here you can specify a mapping for model fields
+    protected $mapping = [
+        'properties' => [
+
+            'id' => [
+                'type' => 'integer'
+            ],
+            'name' => [
+                'type' => 'text',
+                'analyzer' => 'autocomplete',
+                'search_analyzer' => 'autocomplete_search',
+                'fields' => [
+                    'raw' => [
+                        'type' => 'completion',
+                    ]
+                ]
+            ],
+        ]
+    ];
+
+    public function toSearchableArray(): array
+    {
+        return [
+            'id' => $this->getId(),
+            'name' => $this->user->getName()
+        ];
+    }
 
     protected $fillable = [
         'user_id',

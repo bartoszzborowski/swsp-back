@@ -4,16 +4,19 @@ namespace App\GraphQL\Queries;
 
 use App\Constants\GraphQL as GraphQLConstants;
 use App\Criteria\GetByIdCriteria;
+use App\GraphQL\Types\Input\Filters\FiltersStudentType;
 use App\GraphQL\Types\Input\Filters\FiltersType;
 use App\GraphQL\Types\Input\PaginationType;
-use App\GraphQL\Types\Output\ClassType;
-use App\Repository\ClassRepository;
+use App\GraphQL\Types\Output\StudentType;
+use App\GraphQL\Types\Output\UserType;
+use App\Repository\StudentRepository;
+use App\Repository\UserRepository;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use GraphQL\Type\Definition\Type;
 
-class GetClasses extends Query
+class GetUsers extends Query
 {
-    public const QUERY_NAME = 'classes';
+    public const QUERY_NAME = 'users';
 
     protected $attributes = [
         'name' => self::QUERY_NAME
@@ -21,7 +24,7 @@ class GetClasses extends Query
 
     public function type(): Type
     {
-        return GraphQL::paginate(ClassType::TYPE_NAME);
+        return GraphQL::paginate(UserType::TYPE_NAME);
     }
 
     public function args(): array
@@ -34,20 +37,20 @@ class GetClasses extends Query
 
     public function resolve($root, $args)
     {
-        /** @var ClassRepository $classesRepository */
-        $classesRepository = app(ClassRepository::class);
+        /** @var UserRepository $userRepository */
+        $userRepository = app(UserRepository::class);
         // FILTER ARGUMENTS //
         $filters = $this->getFiltersFromQuery($args);
         [$take, $page] = $this->getPaginationFromQuery($args);
 
         foreach ($filters as $index => $value) {
             switch ($index) {
-                case FiltersType::FIELD_ID:
-                    $classesRepository->pushCriteria(new GetByIdCriteria($value));
+                case FiltersStudentType::FIELD_ID:
+                    $userRepository->pushCriteria(new GetByIdCriteria($value));
                     break;
             }
         }
 
-        return $classesRepository->paginate($take, $page);
+        return $userRepository->paginate($take, $page);
     }
 }

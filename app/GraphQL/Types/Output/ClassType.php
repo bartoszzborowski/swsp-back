@@ -6,9 +6,9 @@ use App\Models\Classes;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Type as GraphQLType;
 
-class ClassesType extends GraphQLType
+class ClassType extends GraphQLType
 {
-    public const TYPE_NAME = 'ClassesType';
+    public const TYPE_NAME = 'ClassType';
 
     protected $attributes = [
         'name' => self::TYPE_NAME,

@@ -17,9 +17,11 @@ class BaseSchoolStructureSeeder extends Seeder
      */
     public function run()
     {
+        ini_set('memory_limit', '2048M');
+
         $baseSchool = factory(School::class)->create();
-        $userStudents = factory(User::class, 10)->create(['school_id' => $baseSchool->getId()]);
-        $userParents = factory(User::class, 5)->create(['school_id' => $baseSchool->getId()]);
+        $userStudents = factory(User::class, 20)->create(['school_id' => $baseSchool->getId()]);
+        $userParents = factory(User::class, 10)->create(['school_id' => $baseSchool->getId()]);
         $classes = factory(Classes::class, 2)->create(['school_id' => $baseSchool->getId()]);
 
         $students = new Collection();

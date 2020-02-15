@@ -18,12 +18,17 @@ class StudentRepository extends BaseRepository
         return Student::class;
     }
 
-    public function addNewStudent(User $user, ?int $schoolId = null, ?int $parentId = null): Student
-    {
+    public function addNewStudent(
+        User $user,
+        ?int $schoolId = null,
+        ?int $parentId = null,
+        ?int $classesId = null
+    ): Student {
         $args = [
             'user_id' => $user->getId(),
             'parent_id' => $parentId,
-            'school_id' => $schoolId
+            'school_id' => $schoolId,
+            'classes_id' => $classesId,
         ];
 
         try {

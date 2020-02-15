@@ -3,8 +3,9 @@
 namespace App\Repository;
 
 use App\Models\Classes;
+use App\Models\StudentParent;
 
-class ClassesRepository extends BaseRepository
+class ParentRepository extends BaseRepository
 {
     /**
      * Specify Model class name
@@ -13,6 +14,6 @@ class ClassesRepository extends BaseRepository
      */
     public function model(): string
     {
-        return Classes::class;
+        return StudentParent::class;
     }
 }

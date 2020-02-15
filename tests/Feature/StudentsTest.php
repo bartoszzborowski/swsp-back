@@ -4,10 +4,12 @@ namespace Tests\Unit;
 
 use App\GraphQL\Types\Input\Filters\FiltersStudentType;
 use App\GraphQL\Types\Input\PaginationType;
+use App\Models\Classes;
 use App\Models\School;
 use App\Models\Student;
 use App\Models\StudentParent;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Collection;
@@ -27,9 +29,14 @@ class StudentsTest extends TestCase
      */
     private $parents;
     /**
+     * @var Collection|Classes
+     */
+    private $classes;
+    /**
      * @var School
      */
     private $baseSchool;
+
 
     protected function setUp(): void
     {
@@ -38,6 +45,7 @@ class StudentsTest extends TestCase
         $baseSchool = factory(School::class)->create();
         $userStudents = factory(User::class, 10)->create(['school_id' => $baseSchool->getId()]);
         $userParents = factory(User::class, 5)->create(['school_id' => $baseSchool->getId()]);
+        $classes = factory(Classes::class, 2)->create(['school_id' => $baseSchool->getId()]);
 
         $students = new Collection();
         $parents = new Collection();
@@ -47,11 +55,18 @@ class StudentsTest extends TestCase
                 'user_id' => $parent->getId()]));
         });
 
-        $userStudents->each(static function ($user, $index) use ($baseSchool, $students, $parents) {
-            $students->push(factory(Student::class)->create(['school_id' => $baseSchool->getId(),
-                'user_id' => $user->getId(), 'parent_id' => $parents->get($index % 5)->getId()]));
+        $userStudents->each(static function ($user, $index) use ($baseSchool, $students, $parents, $classes) {
+            $students->push(factory(Student::class)->create(
+                [
+                    'school_id' => $baseSchool->getId(),
+                    'user_id' => $user->getId(),
+                    'parent_id' => $parents->get($index % 5)->getId(),
+                    'classes_id' => $classes->get($index % 2)->getId(),
+                ]
+            ));
         });
 
+        $this->classes = $classes;
         $this->students = $students;
         $this->parents = $parents;
         $this->baseSchool = $baseSchool;
@@ -152,12 +167,15 @@ class StudentsTest extends TestCase
 
         $input = ['input' => [
             'name' => $user->getName(),
+            'last_name' => $user->getLastName(),
             'phone' => $user->getPhone(),
             'address' => $user->getAddress(),
             'email' => $user->getEmail(),
             'password' => $user->getPassword(),
             'blood_group' => $user->getBloodGroup(),
-            'school_id' => $this->baseSchool->getId()
+            'gender' => $user->getGender(),
+            'school_id' => $this->baseSchool->getId(),
+            'birthday' => Carbon::now()->toISOString(),
         ]];
 
         $result = $this->graphql($graphql, [

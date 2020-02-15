@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laratrust\Traits\LaratrustUserTrait;
@@ -21,6 +22,7 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
  * @property string|null $blood_group
  * @property int|null $school_id
  * @property int|null $gender
+ * @property int|null $marital
  * @property string|null $remember_token
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
@@ -51,25 +53,29 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereRoleIs($role = '', $team = null, $boolean = 'and')
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereSchoolId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereGender($value)
  */
 class User extends Authenticatable implements JWTSubject
 {
     use LaratrustUserTrait;
     use Notifiable;
 
-    const ID = 'id';
-    const NAME = 'name';
-    const EMAIL = 'email';
-    const PASSWORD = 'email';
-    const EMAIL_VERIFIED_AT = 'email_verified_at';
-    const ADDRESS = 'address';
-    const PHONE = 'phone';
-    const BIRTHDAY = 'birthday';
-    const BLOOD_GROUP = 'blood_group';
-    const SCHOOL_ID = 'school_id';
-    const REMEMBER_TOKEN = 'remember_token';
-    const GENDER = 'gender';
-    const TOKEN = 'token';
+    public const ID = 'id';
+    public const NAME = 'name';
+    public const LAST_NAME = 'last_name';
+    public const EMAIL = 'email';
+    public const PASSWORD = 'password';
+    public const EMAIL_VERIFIED_AT = 'email_verified_at';
+    public const ADDRESS = 'address';
+    public const PHONE = 'phone';
+    public const BIRTHDAY = 'birthday';
+    public const BLOOD_GROUP = 'blood_group';
+    public const SCHOOL_ID = 'school_id';
+    public const REMEMBER_TOKEN = 'remember_token';
+    public const GENDER = 'gender';
+    public const TOKEN = 'token';
+    public const MARITAL = 'marital';
+    public const ROLE = 'role';
 
     /**
      * The attributes that are mass assignable.
@@ -78,6 +84,7 @@ class User extends Authenticatable implements JWTSubject
      */
     protected $fillable = [
         self::NAME,
+        self::LAST_NAME,
         self::EMAIL,
         self::PASSWORD,
         self::PHONE,
@@ -86,6 +93,7 @@ class User extends Authenticatable implements JWTSubject
         self::BLOOD_GROUP,
         self::SCHOOL_ID,
         self::GENDER,
+        self::MARITAL,
     ];
 
     /**
@@ -95,6 +103,11 @@ class User extends Authenticatable implements JWTSubject
      */
     protected $hidden = [
         'password', 'remember_token',
+    ];
+
+
+    protected $dates = [
+        self::BIRTHDAY
     ];
 
     /**
@@ -121,7 +134,7 @@ class User extends Authenticatable implements JWTSubject
      *
      * @return array
      */
-    public function getJWTCustomClaims()
+    public function getJWTCustomClaims(): array
     {
         return [];
     }
@@ -145,6 +158,11 @@ class User extends Authenticatable implements JWTSubject
     public function getName(): string
     {
         return $this->name;
+    }
+
+    public function getLastName(): string
+    {
+        return $this->{self::LAST_NAME};
     }
 
     /**
@@ -278,5 +296,10 @@ class User extends Authenticatable implements JWTSubject
     public function getGender(): ?int
     {
         return $this->{self::GENDER};
+    }
+
+    public function setBirthdayAttribute($value)
+    {
+        $this->attributes[self::BIRTHDAY] = Carbon::parse($value)->setTimezone('UTC');
     }
 }

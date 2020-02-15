@@ -10,7 +10,7 @@ abstract class Query extends RebingQuery
 {
     public function getPaginationFromQuery($args): array
     {
-        return Arr::flatten(Arr::get($args, GraphQLConstants::PAGINATION_ARG_NAME)) ?? [];
+        return Arr::flatten(Arr::get($args, GraphQLConstants::PAGINATION_ARG_NAME) ?? [10, 1]) ?? [10, 1];
     }
 
     public function getFiltersFromQuery($args)
