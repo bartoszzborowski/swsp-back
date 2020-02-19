@@ -13,13 +13,14 @@ class CreateDailyAttendancesTable extends Migration
      */
     public function up()
     {
-        Schema::create('daily_attendances', function (Blueprint $table) {
+        Schema::create('daily_attendances', static function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('status');
             $table->unsignedBigInteger('class_id');
             $table->unsignedBigInteger('section_id');
             $table->unsignedBigInteger('student_id');
-            $table->integer('status');
             $table->unsignedBigInteger('school_id');
+            $table->unsignedBigInteger('subject_id');
             $table->timestamp('timestamp');
             $table->timestamps();
 
@@ -27,6 +28,7 @@ class CreateDailyAttendancesTable extends Migration
             $table->foreign('section_id')->references('id')->on('sections');
             $table->foreign('student_id')->references('id')->on('students');
             $table->foreign('school_id')->references('id')->on('schools');
+            $table->foreign('subject_id')->references('id')->on('students_subjects');
         });
     }
 
@@ -37,6 +39,13 @@ class CreateDailyAttendancesTable extends Migration
      */
     public function down()
     {
+        Schema::table('daily_attendances', static function (Blueprint $table) {
+            $table->dropForeign(['class_id']);
+            $table->dropForeign(['section_id']);
+            $table->dropForeign(['student_id']);
+            $table->dropForeign(['school_id']);
+        });
+
         Schema::dropIfExists('daily_attendances');
     }
 }

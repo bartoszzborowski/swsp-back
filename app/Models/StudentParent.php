@@ -29,6 +29,7 @@ use ScoutElastic\Searchable;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\StudentParent whereUserId($value)
  * @mixin \Eloquent
  * @property-read User $user
+ * @property \ScoutElastic\Highlight|null $highlight
  */
 class StudentParent extends Model
 {

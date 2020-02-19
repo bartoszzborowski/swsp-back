@@ -4,16 +4,16 @@ namespace App\GraphQL\Queries;
 
 use App\Constants\GraphQL as GraphQLConstants;
 use App\Criteria\GetByIdCriteria;
-use App\GraphQL\Types\Input\Filters\FiltersStudentType;
+use App\GraphQL\Types\Input\Filters\FiltersType;
 use App\GraphQL\Types\Input\PaginationType;
-use App\GraphQL\Types\Output\StudentType;
-use App\Repository\StudentRepository;
+use App\GraphQL\Types\Output\AttendanceType;
+use App\Repository\AttendanceRepository;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use GraphQL\Type\Definition\Type;
 
-class GetStudents extends Query
+class GetAttendance extends Query
 {
-    public const QUERY_NAME = 'students';
+    public const QUERY_NAME = 'attendance';
 
     protected $attributes = [
         'name' => self::QUERY_NAME
@@ -21,36 +21,33 @@ class GetStudents extends Query
 
     public function type(): Type
     {
-        return GraphQL::paginate(StudentType::TYPE_NAME);
+        return GraphQL::paginate(AttendanceType::TYPE_NAME);
     }
 
     public function args(): array
     {
         return [
-            ['name' => GraphQLConstants::FILTER_ARG_NAME, 'type' => GraphQL::type(FiltersStudentType::TYPE_NAME)],
+            ['name' => GraphQLConstants::FILTER_ARG_NAME, 'type' => GraphQL::type(FiltersType::TYPE_NAME)],
             ['name' => GraphQLConstants::PAGINATION_ARG_NAME, 'type' => GraphQL::type(PaginationType::TYPE_NAME)],
         ];
     }
 
     public function resolve($root, $args)
     {
-        /** @var StudentRepository $studentRepository */
-        $studentRepository = app(StudentRepository::class);
+        /** @var AttendanceRepository $attendanceRepository */
+        $attendanceRepository = app(AttendanceRepository::class);
         // FILTER ARGUMENTS //
         $filters = $this->getFiltersFromQuery($args);
         [$take, $page] = $this->getPaginationFromQuery($args);
 
         foreach ($filters as $index => $value) {
             switch ($index) {
-                case FiltersStudentType::FIELD_ID:
-                    $studentRepository->pushCriteria(new GetByIdCriteria($value));
-                    break;
-                case FiltersStudentType::FIELD_CLASS_ID:
-                    $studentRepository->pushCriteria(new GetByIdCriteria($value, 'classes_id'));
+                case FiltersType::FIELD_ID:
+                    $attendanceRepository->pushCriteria(new GetByIdCriteria($value));
                     break;
             }
         }
 
-        return $studentRepository->paginate($take, $page);
+        return $attendanceRepository->paginate($take, $page);
     }
 }

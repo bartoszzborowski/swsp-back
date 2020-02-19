@@ -32,6 +32,9 @@ class StudentType extends GraphQLType
             ],
             'classes' => [
                 'type' => GraphQL::type(ClassType::TYPE_NAME)
+            ],
+            'session' => [
+                'type' => GraphQL::type(SessionType::TYPE_NAME)
             ]
         ];
     }

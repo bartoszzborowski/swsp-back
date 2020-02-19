@@ -13,12 +13,13 @@ class CreateStudentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('students', function (Blueprint $table) {
+        Schema::create('students', static function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('parent_id')->nullable();
             $table->unsignedBigInteger('school_id')->nullable();
             $table->unsignedBigInteger('classes_id')->nullable();
+            $table->unsignedBigInteger('session_id')->nullable();
             $table->string('code')->nullable();
             $table->timestamps();
 
@@ -26,6 +27,7 @@ class CreateStudentsTable extends Migration
             $table->foreign('parent_id')->references('id')->on('parent');
             $table->foreign('school_id')->references('id')->on('schools')->onDelete('cascade');
             $table->foreign('classes_id')->references('id')->on('classes');
+            $table->foreign('session_id')->references('id')->on('sessions');
         });
 
         Schema::table('parent', function (Blueprint $table) {
@@ -40,12 +42,14 @@ class CreateStudentsTable extends Migration
      */
     public function down()
     {
-        Schema::table('students', function (Blueprint $table) {
+        Schema::table('students', static function (Blueprint $table) {
             $table->dropForeign(['user_id']);
             $table->dropForeign(['parent_id']);
             $table->dropForeign(['school_id']);
+            $table->dropForeign(['classes_id']);
+            $table->dropForeign(['session_id']);
         });
-        Schema::table('parent', function (Blueprint $table) {
+        Schema::table('parent', static function (Blueprint $table) {
             $table->dropForeign(['student_id']);
         });
         Schema::dropIfExists('students');

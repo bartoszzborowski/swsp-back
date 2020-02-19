@@ -12,6 +12,7 @@ class UpdateStudentType extends UserRegisterType
     public const FIELD_PARENT_ID = 'parent_id';
     public const FIELD_SCHOOL_ID = 'school_id';
     public const FIELD_CLASSES_ID = 'classes_id';
+    public const FIELD_SESSION_ID = 'session_id';
     public const FIELD_STUDENT_ID = 'id';
 
     protected $attributes = [
@@ -34,6 +35,9 @@ class UpdateStudentType extends UserRegisterType
                 'type' => Type::int()
             ],
             self::FIELD_CLASSES_ID => [
+                'type' => Type::int()
+            ],
+            self::FIELD_SESSION_ID => [
                 'type' => Type::int()
             ],
         ]);

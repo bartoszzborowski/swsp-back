@@ -13,14 +13,17 @@ use App\GraphQL\Mutations\UpdateStudent;
 use App\GraphQL\Mutations\UpdateUser;
 use App\GraphQL\Mutations\UpdateUserPasswordMutation;
 use App\GraphQL\Queries\ElasticSearch;
+use App\GraphQL\Queries\GetAttendance;
 use App\GraphQL\Queries\GetClasses;
 use App\GraphQL\Queries\GetParents;
 use App\GraphQL\Queries\GetSessions;
 use App\GraphQL\Queries\GetStudents;
+use App\GraphQL\Queries\GetStudentSubject;
 use App\GraphQL\Queries\GetUsers;
 use App\GraphQL\Queries\UsersQuery;
 use App\GraphQL\Type\Enum\ElasticSearchTypeEnum;
 use App\GraphQL\Types\Input\Filters\FiltersSearchElasticType;
+use App\GraphQL\Types\Input\Filters\FiltersStudentSubject;
 use App\GraphQL\Types\Input\Filters\FiltersStudentType;
 use App\GraphQL\Types\Input\Filters\FiltersType;
 use App\GraphQL\Types\Input\PaginationType;
@@ -28,12 +31,14 @@ use App\GraphQL\Types\Input\UpdateStudentType as UpdateStudentInputType;
 use App\GraphQL\Types\Input\UpdateUserType;
 use App\GraphQL\Types\Input\UserLoginType;
 use App\GraphQL\Types\Input\UserRegisterType;
+use App\GraphQL\Types\Output\AttendanceType;
 use App\GraphQL\Types\Output\ClassType;
 use App\GraphQL\Types\Output\ParentType;
 use App\GraphQL\Types\Output\SearchElasticType;
 use App\GraphQL\Types\Output\SessionType;
 use App\GraphQL\Types\Input\SessionType as SessionInputType;
 use App\GraphQL\Types\Input\UpdateSessionType as UpdateSessionInputType;
+use App\GraphQL\Types\Output\StudentSubjectType;
 use App\GraphQL\Types\Output\StudentType;
 use App\GraphQL\Types\Input\StudentType as StudentInputType;
 use App\GraphQL\Types\Output\UserType;
@@ -50,6 +55,8 @@ class GraphqlConfig
             GetSessions::class,
             ElasticSearch::class,
             GetUsers::class,
+            GetAttendance::class,
+            GetStudentSubject::class,
         ];
     }
 
@@ -76,22 +83,25 @@ class GraphqlConfig
             'UserType' => UserType::class,
             'UserLoginInputType' => UserLoginType::class,
             'ReviewInput' => ReviewInput::class,
-            UserRegisterType::class,
-            UpdateUserType::class,
-            ParentType::class,
             StudentType::class,
-            StudentInputType::class,
-            UpdateStudentInputType::class,
-            PaginationType::class,
-            FiltersType::class,
-            FiltersStudentType::class,
+            AttendanceType::class,
             ClassType::class,
-            SessionType::class,
-            SessionInputType::class,
-            UpdateSessionInputType::class,
             ElasticSearchTypeEnum::class,
             FiltersSearchElasticType::class,
+            FiltersStudentSubject::class,
+            FiltersStudentType::class,
+            FiltersType::class,
+            PaginationType::class,
+            ParentType::class,
             SearchElasticType::class,
+            SessionInputType::class,
+            SessionType::class,
+            StudentInputType::class,
+            StudentSubjectType::class,
+            UpdateSessionInputType::class,
+            UpdateStudentInputType::class,
+            UpdateUserType::class,
+            UserRegisterType::class,
         ];
     }
 }

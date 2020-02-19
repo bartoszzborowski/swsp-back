@@ -15,6 +15,7 @@ use ScoutElastic\Searchable;
  * @property int|null $user_id
  * @property int|null $parent_id
  * @property int|null $school_id
+ * @property int|null $session_id
  * @property string|null $code
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
@@ -34,6 +35,9 @@ use ScoutElastic\Searchable;
  * @property-read \App\Models\StudentParent $parent
  * @property-read \App\Models\User $user
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Student whereClassesId($value)
+ * @property \ScoutElastic\Highlight|null $highlight
+ * @property-read \App\Models\Session $session
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Student whereSessionId($value)
  */
 class Student extends Model
 {
@@ -84,6 +88,7 @@ class Student extends Model
         'user_id',
         'parent_id',
         'school_id',
+        'session_id',
     ];
 
     public function user(): HasOne
@@ -99,6 +104,11 @@ class Student extends Model
     public function parent(): HasOne
     {
         return $this->hasOne(StudentParent::class, 'id', 'parent_id');
+    }
+
+    public function session(): HasOne
+    {
+        return $this->hasOne(Session::class, 'id', 'session_id');
     }
 
     /**

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStudentsSubjectsTable extends Migration
+class CreateSubjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class CreateStudentsSubjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('students_subjects', function (Blueprint $table) {
+        Schema::create('students_subjects', static function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name')->nullable();
+            $table->string('slug')->nullable();
             $table->string('session')->nullable();
-            $table->unsignedBigInteger('school_id')->nullable();
             $table->unsignedBigInteger('class_id')->nullable();
             $table->timestamps();
 
-            $table->foreign('school_id')->references('id')->on('schools')->onDelete('cascade');
             $table->foreign('class_id')->references('id')->on('classes')->onDelete('cascade');
         });
     }
@@ -33,6 +32,10 @@ class CreateStudentsSubjectsTable extends Migration
      */
     public function down()
     {
+        Schema::table('students_subjects', static function (Blueprint $table) {
+            $table->dropForeign(['class_id']);
+        });
+
         Schema::dropIfExists('students_subjects');
     }
 }
