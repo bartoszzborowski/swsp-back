@@ -17,4 +17,9 @@ class Database
     public const DAILY_ATTENDANCE = 'daily_attendances';
     public const SECTIONS = 'sections';
     public const STUDENT_SUBJECTS = 'students_subjects';
+    public const STUDENT_MARKS = 'marks';
+    public const ROUTINES = 'routines';
+    public const STUDENT_GRADE = 'grades';
+    public const CLASSES_SECTIONS = 'classes_sections';
+    public const STUDENTS_TEACHERS = 'students_teachers';
 }

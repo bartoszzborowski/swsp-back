@@ -34,7 +34,7 @@ class StudentRepository extends BaseRepository
         try {
             return $this->create($args);
         } catch (\Exception $exception) {
-            new Error($exception->getMessage());
+            throw new Error($exception->getMessage());
         }
     }
 }

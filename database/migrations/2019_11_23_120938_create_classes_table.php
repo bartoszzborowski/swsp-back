@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class CreateClassesTable extends Migration
@@ -13,14 +14,14 @@ class CreateClassesTable extends Migration
      */
     public function up()
     {
-        if(!Schema::hasTable('classes')) {
+        if (!Schema::hasTable('classes')) {
             Schema::create('classes', function (Blueprint $table) {
                 $table->bigIncrements('id');
                 $table->string('name');
                 $table->unsignedBigInteger('school_id');
                 $table->timestamps();
 
-                $table->foreign('school_id')->references('id')->on('schools')->onDelete('cascade');
+                $table->foreign('school_id')->references('id')->on('schools');
             });
         }
     }
@@ -36,6 +37,9 @@ class CreateClassesTable extends Migration
             $table->dropForeign(['school_id']);
         });
 
+        Schema::disableForeignKeyConstraints();
+        DB::table('classes')->truncate();
         Schema::dropIfExists('classes');
+        Schema::enableForeignKeyConstraints();
     }
 }

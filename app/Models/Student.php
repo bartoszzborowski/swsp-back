@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Constants\Database;
 use App\Elasticsearch\Index\StudentIndexConfigurator;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use ScoutElastic\Searchable;
 
@@ -16,6 +17,7 @@ use ScoutElastic\Searchable;
  * @property int|null $parent_id
  * @property int|null $school_id
  * @property int|null $session_id
+ * @property int|null $section_id
  * @property string|null $code
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
@@ -38,6 +40,11 @@ use ScoutElastic\Searchable;
  * @property \ScoutElastic\Highlight|null $highlight
  * @property-read \App\Models\Session $session
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Student whereSessionId($value)
+ * @property int|null $subject_id
+ * @property-read \App\Models\StudentSubject $subject
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Student whereSubjectId($value)
+ * @property-read \App\Models\ClassSection $section
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Student whereSectionId($value)
  */
 class Student extends Model
 {
@@ -88,7 +95,10 @@ class Student extends Model
         'user_id',
         'parent_id',
         'school_id',
+        'classes_id',
+        'subject_id',
         'session_id',
+        'section_id',
     ];
 
     public function user(): HasOne
@@ -109,6 +119,16 @@ class Student extends Model
     public function session(): HasOne
     {
         return $this->hasOne(Session::class, 'id', 'session_id');
+    }
+
+    public function subject(): HasOne
+    {
+        return $this->hasOne(StudentSubject::class, 'id', 'subject_id');
+    }
+
+    public function section(): HasOne
+    {
+        return $this->hasOne(ClassSection::class, 'id', 'section_id');
     }
 
     /**

@@ -20,11 +20,13 @@ use Faker\Generator as Faker;
 
 $factory->define(StudentSubject::class, static function (Faker $faker, $args) {
     $name = 'Subject ' . $faker->numberBetween(1, 100);
-    $baseSchool = factory(\App\Models\School::class)->create();
+    isset($args['school_id']) ? $baseSchool = $args['school_id'] : $baseSchool = factory(\App\Models\School::class)->create()->getId();
+    isset($args['class_id']) ? $classID = $args['class_id'] : $classID = factory(\App\Models\Classes::class)->create(['school_id' => $baseSchool]);
+
     return [
         'name' => $name,
         'slug' => \Illuminate\Support\Str::slug($name),
         'session' => null,
-        'class_id' => factory(\App\Models\Classes::class)->create(['school_id' => $baseSchool->getId()])->getId()
+        'class_id' => $classID
     ];
 });

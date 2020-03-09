@@ -5,8 +5,10 @@ namespace App\GraphQL\Mutations;
 use App\Constants\GraphQL as GraphQLConstant;
 use App\GraphQL\Types\Input\UserRegisterType;
 use App\GraphQL\Types\Output\UserType;
+use App\Models\Role;
 use App\Models\User;
 use App\Repository\UserRepository;
+use GraphQL\Error\Error;
 use Illuminate\Support\Arr;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use GraphQL\Type\Definition\Type as GraphqlType;
@@ -63,6 +65,7 @@ class RegisterUser extends Mutation
         $args = Arr::get($args, 'input');
         $args['password'] = bcrypt(Arr::get($args, 'password'));
 
+        /** @var User $user */
         $user = $this->userRepository->create($args);
 
         if ($user) {
@@ -70,6 +73,6 @@ class RegisterUser extends Mutation
             return $user;
         }
 
-        throw new \Exception('Register not successful');
+        throw new Error('Register not successful');
     }
 }

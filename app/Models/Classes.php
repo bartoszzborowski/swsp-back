@@ -4,6 +4,8 @@ namespace App\Models;
 
 use App\Constants\Database;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * App\Models\Classes
@@ -22,49 +24,49 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Classes whereSchoolId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Classes whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\ClassSection[] $sections
+ * @property-read int|null $sections_count
  */
 class Classes extends Model
 {
     public const ID = 'id';
+    public const NAME = 'name';
+    public const SCHOOL_ID = 'school_id';
+
     protected $table = Database::CLASSES;
 
-    /**
-     * @return int
-     */
+    protected $fillable = [
+        self::NAME,
+        self::SCHOOL_ID,
+    ];
+
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @return int
-     */
     public function getSchoolId(): int
     {
         return $this->school_id;
     }
 
-    /**
-     * @return \Illuminate\Support\Carbon|null
-     */
     public function getCreatedAt(): ?\Illuminate\Support\Carbon
     {
         return $this->created_at;
     }
 
-    /**
-     * @return \Illuminate\Support\Carbon|null
-     */
     public function getUpdatedAt(): ?\Illuminate\Support\Carbon
     {
         return $this->updated_at;
+    }
+
+    public function sections(): BelongsToMany
+    {
+        return $this->belongsToMany(ClassSection::class, Database::CLASSES_SECTIONS, 'class_id', 'section_id');
     }
 }

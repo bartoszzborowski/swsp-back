@@ -2,9 +2,8 @@
 
 namespace App\GraphQL\Types\Output;
 
-use App\Models\StudentParent;
+use App\Models\DailyAttendance;
 use GraphQL\Type\Definition\Type;
-use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Type as GraphQLType;
 
 class AttendanceType extends GraphQLType
@@ -13,8 +12,7 @@ class AttendanceType extends GraphQLType
 
     protected $attributes = [
         'name' => self::TYPE_NAME,
-        'description' => 'A parent',
-        'model' => StudentParent::class,
+        'model' => DailyAttendance::class,
     ];
 
     public function fields(): array
@@ -23,6 +21,18 @@ class AttendanceType extends GraphQLType
             'id' => [
                 'type' => Type::nonNull(Type::int()),
             ],
+            'student_id' => [
+                'type' => Type::int(),
+            ],
+            'subject_id' => [
+                'type' => Type::int(),
+            ],
+            'status' => [
+                'type' => Type::string(),
+            ],
+            'timestamp' => [
+                'type' => Type::string(),
+            ]
         ];
     }
 }

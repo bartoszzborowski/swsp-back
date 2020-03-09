@@ -17,10 +17,12 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(ClassSection::class, static function (Faker $faker, $args) {
-    $baseSchool = factory(\App\Models\School::class)->create();
+    isset($args['school_id']) ? $baseSchool = $args['school_id'] : $baseSchool = factory(\App\Models\School::class)->create()->getId();
+    isset($args['class_id']) ? $classID = $args['class_id'] : $classID = factory(\App\Models\Classes::class)->create(['school_id' => $baseSchool]);
+
     return [
         'name' => 'Section ' . $faker->numberBetween(1, 20),
-        'class_id' => factory(\App\Models\Classes::class)->create(['school_id' => $baseSchool->getId()])->getId(),
-        'school_id' => $baseSchool->getId(),
+        'class_id' => $classID,
+        'school_id' => $baseSchool,
     ];
 });

@@ -18,14 +18,15 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(DailyAttendance::class, static function (Faker $faker, $args) {
-    $baseSchool = factory(\App\Models\School::class)->create();
-    $classID = factory(\App\Models\Classes::class)->create(['school_id' => $baseSchool->getId()]);
-    $sectionID = factory(\App\Models\ClassSection::class)->create(['school_id' => $baseSchool->getId()]);
+    isset($args['school_id']) ? $baseSchool = $args['school_id'] : $baseSchool = factory(\App\Models\School::class)->create()->getId();
+    isset($args['class_id']) ? $classID = $args['class_id'] : $classID = factory(\App\Models\Classes::class)->create(['school_id' => $baseSchool]);
+    isset($args['section_id']) ? $sectionID = $args['section_id'] : $sectionID = factory(\App\Models\ClassSection::class)->create(['school_id' => $baseSchool]);
 
     return [
-        'school_id' => $baseSchool->getId(),
-        'class_id' => $classID->getId(),
-        'section_id' => $sectionID->getId(),
+        'school_id' => $baseSchool,
+        'class_id' => $classID,
+        'section_id' => $sectionID,
+        'subject_id' => null,
         'student_id' => null,
         'status' => $faker->numberBetween(1, 3),
     ];

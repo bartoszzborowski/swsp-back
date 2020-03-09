@@ -4,6 +4,7 @@ namespace App\GraphQL\Types\Output;
 
 use App\Models\Classes;
 use GraphQL\Type\Definition\Type;
+use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Type as GraphQLType;
 
 class ClassType extends GraphQLType
@@ -24,6 +25,9 @@ class ClassType extends GraphQLType
             ],
             'name' => [
                 'type' => Type::string(),
+            ],
+            'sections' => [
+                'type' => Type::listOf(GraphQL::type(ClassSectionType::TYPE_NAME))
             ],
         ];
     }

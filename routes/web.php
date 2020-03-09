@@ -3,6 +3,7 @@
 use App\Models\Article;
 use App\Models\Student;
 use App\Models\StudentParent;
+use App\Repository\ClassSectionRepository;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,11 +21,14 @@ Route::get('/', function () {
 });
 
 Route::get('/article', function () {
-    $dupa = StudentParent::query()->paginate(5000, ['id', 'user_id'], 'test', 1);
-    $dupa->each(static function ($item) {
-        $item->searchable();
-    });
-    $test = Student::search('sebastia')->with('user');
+//    $dupa = StudentParent::query()->paginate(5000, ['id', 'user_id'], 'test', 1);
+//    $dupa->each(static function ($item) {
+//        $item->searchable();
+//    });
+//    $test = Student::search('sebastia')->with('user');
 
-    dd($test->explain());
+    /** @var ClassSectionRepository $repo */
+    $repo = app(ClassSectionRepository::class);
+    $repo->pushCriteria(new \App\Criteria\ClassSectionCriteria(2));
+    dd($repo->all());
 });

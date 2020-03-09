@@ -13,7 +13,7 @@ class CreateRoutinesTable extends Migration
      */
     public function up()
     {
-        Schema::create('routines', function (Blueprint $table) {
+        Schema::create('routines', static function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('class_id')->nullable();
             $table->unsignedBigInteger('section_id')->nullable();
@@ -29,12 +29,12 @@ class CreateRoutinesTable extends Migration
             $table->string('session')->nullable();
             $table->timestamps();
 
-            $table->foreign('class_id')->references('id')->on('classes')->onDelete('cascade');
-            $table->foreign('section_id')->references('id')->on('sections')->onDelete('cascade');
-            $table->foreign('subject_id')->references('id')->on('subjects')->onDelete('cascade');
-            $table->foreign('teacher_id')->references('id')->on('teachers')->onDelete('cascade');
-            $table->foreign('room_id')->references('id')->on('rooms')->onDelete('cascade');
-            $table->foreign('school_id')->references('id')->on('schools')->onDelete('cascade');
+            $table->foreign('class_id')->references('id')->on('classes');
+            $table->foreign('section_id')->references('id')->on('sections');
+            $table->foreign('subject_id')->references('id')->on('students_subjects');
+            $table->foreign('teacher_id')->references('id')->on('students_teachers');
+            $table->foreign('room_id')->references('id')->on('class_rooms');
+            $table->foreign('school_id')->references('id')->on('schools');
         });
     }
 

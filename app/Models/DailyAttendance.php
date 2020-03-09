@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Constants\Database;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -30,6 +31,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\DailyAttendance whereStudentId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\DailyAttendance whereTimestamp($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\DailyAttendance whereUpdatedAt($value)
+ * @property int $subject_id
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\DailyAttendance whereSubjectId($value)
  */
 class DailyAttendance extends Model
 {
@@ -41,8 +44,20 @@ class DailyAttendance extends Model
         'student_id',
         'status',
         'school_id',
+        'subject_id',
         'timestamp'
     ];
+
+    protected $dates = [
+        'timestamp'
+    ];
+
+
+    public function setTimestampAttribute($value): void
+    {
+        $this->attributes['timestamp'] = Carbon::parse($value)->setTimezone('UTC');
+    }
+
     /**
      * @return int
      */

@@ -2,7 +2,7 @@
 
 namespace App\GraphQL\Types\Input;
 
-use App\Models\Student;
+use App\Models\Session;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Type as GraphQLType;
 
@@ -18,7 +18,7 @@ class SessionType extends GraphQLType
 
     protected $attributes = [
         'name' => self::TYPE_NAME,
-        'model' => Student::class,
+        'model' => Session::class,
     ];
 
     public function fields(): array

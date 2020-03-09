@@ -14,7 +14,7 @@ class CreateMarksTable extends Migration
     public function up()
     {
         Schema::create('marks', function (Blueprint $table) {
-            $table->bigIncrements('id')->nullable();
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('student_id')->nullable();
             $table->unsignedBigInteger('subject_id')->nullable();
             $table->unsignedBigInteger('class_id')->nullable();
@@ -27,7 +27,7 @@ class CreateMarksTable extends Migration
             $table->timestamps();
 
             $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
-            $table->foreign('subject_id')->references('id')->on('subjects')->onDelete('cascade');
+            $table->foreign('subject_id')->references('id')->on('students_subjects')->onDelete('cascade');
             $table->foreign('class_id')->references('id')->on('classes')->onDelete('cascade');
             $table->foreign('section_id')->references('id')->on('sections')->onDelete('cascade');
             $table->foreign('exam_id')->references('id')->on('exams')->onDelete('cascade');

@@ -13,6 +13,7 @@ class StudentType extends UserRegisterType
     public const FIELD_SCHOOL_ID = 'school_id';
     public const FIELD_CLASSES_ID = 'classes_id';
     public const FIELD_SESSION_ID = 'session_id';
+    public const FIELD_SECTION_ID = 'section_id';
 
     protected $attributes = [
         'name' => self::TYPE_NAME,
@@ -36,7 +37,10 @@ class StudentType extends UserRegisterType
             ],
             self::FIELD_SESSION_ID => [
                 'type' => Type::int()
-            ]
+            ],
+            self::FIELD_SECTION_ID => [
+                'type' => Type::int()
+            ],
         ]);
     }
 }

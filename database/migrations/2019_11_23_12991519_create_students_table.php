@@ -20,6 +20,8 @@ class CreateStudentsTable extends Migration
             $table->unsignedBigInteger('school_id')->nullable();
             $table->unsignedBigInteger('classes_id')->nullable();
             $table->unsignedBigInteger('session_id')->nullable();
+            $table->unsignedBigInteger('subject_id')->nullable();
+            $table->unsignedBigInteger('section_id')->nullable();
             $table->string('code')->nullable();
             $table->timestamps();
 
@@ -28,6 +30,8 @@ class CreateStudentsTable extends Migration
             $table->foreign('school_id')->references('id')->on('schools')->onDelete('cascade');
             $table->foreign('classes_id')->references('id')->on('classes');
             $table->foreign('session_id')->references('id')->on('sessions');
+            $table->foreign('section_id')->references('id')->on('sections');
+            $table->foreign('subject_id')->references('id')->on('students_subjects');
         });
 
         Schema::table('parent', function (Blueprint $table) {
@@ -48,6 +52,7 @@ class CreateStudentsTable extends Migration
             $table->dropForeign(['school_id']);
             $table->dropForeign(['classes_id']);
             $table->dropForeign(['session_id']);
+            $table->dropForeign(['section_id']);
         });
         Schema::table('parent', static function (Blueprint $table) {
             $table->dropForeign(['student_id']);

@@ -27,8 +27,9 @@ class BaseSchoolStructureSeeder extends Seeder
         $userParents = factory(User::class, 1000)->create(['school_id' => $baseSchool->getId()]);
         $classes = factory(Classes::class, 5)->create(['school_id' => $baseSchool->getId()]);
         $classesSections = factory(ClassSection::class, 10)->create(['school_id' => $baseSchool->getId()]);
+        $studentSubject = null;
 
-        $classes->each(static function (Classes $class) {
+        $classes->each(static function (Classes $class) use (&$studentSubject) {
             $studentSubject = factory(StudentSubject::class, rand(2, 8))->create(['class_id' => $class->getId()]);
         });
 
@@ -40,7 +41,7 @@ class BaseSchoolStructureSeeder extends Seeder
                 'user_id' => $parent->getId()]));
         });
 
-        $userStudents->each(static function ($user, $index) use ($baseSchool, $parents, $classes, $classesSections) {
+        $userStudents->each(static function ($user, $index) use ($baseSchool, $parents, $classes, $classesSections, $studentSubject) {
             $student = factory(Student::class)->create(
                 [
                     'school_id' => $baseSchool->getId(),
@@ -55,7 +56,8 @@ class BaseSchoolStructureSeeder extends Seeder
                     'school_id' => $baseSchool->getId(),
                     'section_id' => $classesSections->get($index & 5)->getId(),
                     'student_id' => $student->getId(),
-                    'class_id' => $student->classes->getId()
+                    'class_id' => $student->classes->getId(),
+                    'subject_id' => $studentSubject->get($index % 2)
                 ]
             );
         });

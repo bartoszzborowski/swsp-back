@@ -5,6 +5,7 @@ namespace Tests\Unit;
 use App\GraphQL\Types\Input\Filters\FiltersStudentType;
 use App\GraphQL\Types\Input\PaginationType;
 use App\Models\Classes;
+use App\Models\Role;
 use App\Models\School;
 use App\Models\Student;
 use App\Models\StudentParent;

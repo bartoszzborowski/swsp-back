@@ -2,8 +2,9 @@
 
 namespace App\GraphQL\Types\Input;
 
+use App\GraphQL\Type\Enum\RoleTypeEnum;
 use App\Models\User;
-use Rebing\GraphQL\Support\Field;
+use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Type as GraphQLType;
 use GraphQL\Type\Definition\Type;
 
@@ -22,6 +23,7 @@ class UserRegisterType extends GraphQLType
     public const FIELD_PASSWORD = 'password';
     public const FIELD_PHONE = 'phone';
     public const FIELD_ROLE = 'role';
+    public const FIELD_SCHOOL_ID = 'school_id';
 
     protected $inputObject = true;
 
@@ -64,8 +66,11 @@ class UserRegisterType extends GraphQLType
             self::FIELD_MARITAL => [
                 'type' => Type::string()
             ],
+            self::FIELD_SCHOOL_ID => [
+                'type' => Type::int()
+            ],
             self::FIELD_ROLE => [
-                'type' => Type::string()
+                'type' => GraphQL::type(RoleTypeEnum::TYPE_NAME)
             ],
         ];
     }

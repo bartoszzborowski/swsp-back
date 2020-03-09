@@ -19,9 +19,11 @@ class CreateSubjectsTable extends Migration
             $table->string('slug')->nullable();
             $table->string('session')->nullable();
             $table->unsignedBigInteger('class_id')->nullable();
+            $table->unsignedBigInteger('school_id')->nullable();
             $table->timestamps();
 
             $table->foreign('class_id')->references('id')->on('classes')->onDelete('cascade');
+            $table->foreign('school_id')->references('id')->on('schools')->onDelete('cascade');
         });
     }
 

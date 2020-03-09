@@ -3,6 +3,9 @@
 
 namespace App\Repository;
 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+
 abstract class BaseRepository extends \Prettus\Repository\Eloquent\BaseRepository
 {
     /**
@@ -15,7 +18,7 @@ abstract class BaseRepository extends \Prettus\Repository\Eloquent\BaseRepositor
      * @return mixed
      * @throws \Prettus\Repository\Exceptions\RepositoryException
      */
-    public function paginate($limit = null, $page = null, $columns = ['*'], $method = "paginate")
+    public function paginate($limit = null, $page = null, $columns = ['*'], $method = 'paginate')
     {
         $this->applyCriteria();
         $this->applyScope();
@@ -26,5 +29,31 @@ abstract class BaseRepository extends \Prettus\Repository\Eloquent\BaseRepositor
         $this->resetCriteria();
 
         return $this->parserResult($results);
+    }
+
+    public function toSql()
+    {
+        $this->applyCriteria();
+        $this->applyScope();
+        $query = $this->model->toSql();
+        $bindings = $this->model->getBindings();
+        $pdo = DB::connection()->getPdo();
+        foreach ($bindings as $key => $binding) {
+            $regex = is_numeric($key)
+                ? "/\?(?=(?:[^'\\\']*'[^'\\\']*')*[^'\\\']*$)/"
+                : "/:{$key}(?=(?:[^'\\\']*'[^'\\\']*')*[^'\\\']*$)/";
+            if (!is_int($binding) && !is_float($binding)) {
+                $binding = $pdo->quote($binding);
+            }
+            $query = preg_replace($regex, $binding, $query, 1);
+        }
+        return $query;
+    }
+
+    public function getQueryBuilder(): Model
+    {
+        $this->applyCriteria();
+        $this->applyScope();
+        return $this->model;
     }
 }

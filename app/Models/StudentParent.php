@@ -37,6 +37,12 @@ class StudentParent extends Model
 
     protected $table = Database::PARENT;
 
+    protected $fillable = [
+        'user_id',
+        'student_id',
+        'school_id',
+    ];
+
     public function searchableAs(): string
     {
         return 'parents';

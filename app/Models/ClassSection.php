@@ -3,7 +3,12 @@
 namespace App\Models;
 
 use App\Constants\Database;
+use Doctrine\DBAL\Query\QueryBuilder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Query\Builder;
 
 /**
  * App\Models\ClassSection
@@ -24,6 +29,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ClassSection whereSchoolId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ClassSection whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\ClassesSections[] $classes
+ * @property-read int|null $classes_count
  */
 class ClassSection extends Model
 {
@@ -81,5 +88,20 @@ class ClassSection extends Model
     public function getUpdatedAt(): ?\Illuminate\Support\Carbon
     {
         return $this->updated_at;
+    }
+
+//    public function classes(): BelongsToMany
+//    {
+//        return $this->belongsToMany(Classes::class, Database::CLASSES_SECTIONS, 'class_id', 'section_id');
+//    }
+
+    public function classes(): HasMany
+    {
+        return $this->hasMany(ClassesSections::class, 'section_id', 'id');
+    }
+
+    public function joinClassesSections()
+    {
+        return $this->join(Database::CLASSES_SECTIONS, 'id', '=', 'section_id');
     }
 }

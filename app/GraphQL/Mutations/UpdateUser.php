@@ -5,6 +5,7 @@ namespace App\GraphQL\Mutations;
 use App\Constants\GraphQL as GraphQLConstant;
 use App\GraphQL\Types\Input\UpdateUserType as UpdateUserInputType;
 use App\GraphQL\Types\Output\UserType;
+use App\Models\Role;
 use App\Repository\UserRepository;
 use GraphQL\Error\Error;
 use Illuminate\Support\Arr;
@@ -50,6 +51,7 @@ class UpdateUser extends Mutation
     {
         $args = Arr::get($args, GraphQLConstant::INPUT_ARG_NAME);
         $userId = Arr::get($args, UpdateUserInputType::FIELD_USER_ID);
+        $args['password'] = bcrypt(Arr::get($args, 'password'));
         unset($args[UpdateUserInputType::FIELD_USER_ID]);
         try {
             return $this->userRepository->update($args, $userId);

@@ -35,7 +35,8 @@ class StudentSubject extends Model
         'name',
         'slug',
         'session',
-        'class_id'
+        'class_id',
+        'school_idx'
     ];
 
     /**

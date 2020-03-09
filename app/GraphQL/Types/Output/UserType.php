@@ -56,11 +56,19 @@ class UserType extends GraphQLType
                 'type'        => Type::int(),
                 'description' => 'The gender of user',
             ],
+            'roles' => [
+              'type' => Type::string(),
+            ],
             'token'  => [
                 'type'        => Type::string(),
                 'description' => 'True, if the queried user is the current user',
                 'selectable'  => true, // Does not try to query this from the database
             ]
         ];
+    }
+
+    protected function resolveRolesField(User $root, $args)
+    {
+        return $root->getRoles()->first()->name ?? null;
     }
 }

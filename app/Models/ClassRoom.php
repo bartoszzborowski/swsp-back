@@ -22,6 +22,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ClassRoom whereSchoolId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ClassRoom whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property int $capacity
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ClassRoom whereCapacity($value)
  */
 class ClassRoom extends Model
 {
