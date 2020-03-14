@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Constants\Database;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
  * App\Models\Routine
@@ -46,4 +47,24 @@ use Illuminate\Database\Eloquent\Model;
 class Routine extends Model
 {
     protected $table = Database::ROUTINES;
+
+    protected $fillable = [
+        'class_id',
+        'section_id',
+        'subject_id',
+        'teacher_id',
+        'room_id',
+        'starting_hour',
+        'ending_hour',
+        'starting_minute',
+        'ending_minute',
+        'day',
+        'school_id',
+        'lesson_number'
+    ];
+
+    public function subject(): HasOne
+    {
+        return  $this->hasOne(StudentSubject::class, 'id', 'subject_id');
+    }
 }

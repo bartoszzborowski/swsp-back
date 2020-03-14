@@ -2,83 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81b3004e-5d70-4ded-bd9c-ec2412262d4f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Criteria/ClassSectionCriteria.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/CreateAttendance.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/CreateClass.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/CreateClassSection.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/CreateSubject.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/DeleteClass.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/DeleteClassSection.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/DeleteStudentSubject.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/UpdateAttendance.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/UpdateClass.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/UpdateClassSection.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/UpdateSubject.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Queries/GetClassSections.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Queries/GetSchools.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Queries/GetTeachers.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Enum/RoleTypeEnum.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/AttendanceType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/ClassInputType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/ClassSectionInputType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/Filters/FiltersAttendanceType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/Filters/FiltersSectionsType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/StudentSubjectInputType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/UpdateAttendanceType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/UpdateClassInputType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/UpdateClassSectionInputType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/UpdateStudentSubjectInputType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Output/ClassSectionType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Output/SchoolType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Output/TeacherType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repository/ClassSectionRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repository/SchoolRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repository/TeacherRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Criteria/RoleCriteria.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/CreateRoom.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/CreateRoutines.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/DeleteRoom.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/DeleteRoutine.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/UpdateRoom.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/UpdateRoutine.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Queries/GerRoutine.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Queries/GetRooms.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/Filters/FilterUserType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/Filters/FiltersRoutineType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/RoomInputType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/RoutineInputType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/UpdateRoomInputType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/UpdateRoutineInputType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Output/RoomType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/GraphQL/Types/Output/RoutineType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repository/RoomRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repository/RoutineRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Constants/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Constants/Database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Criteria/GetByIdCriteria.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Criteria/GetByIdCriteria.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Elasticsearch/Index/StudentIndexConfigurator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Elasticsearch/Index/StudentIndexConfigurator.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/GraphQL/GraphqlConfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/GraphqlConfig.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GraphQL/Mutations/RegisterUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/RegisterUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GraphQL/Mutations/UpdateUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/UpdateUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GraphQL/Queries/GetAttendance.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Queries/GetAttendance.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GraphQL/Types/Input/SessionType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/SessionType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GraphQL/Types/Input/StudentType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/StudentType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GraphQL/Types/Input/UpdateStudentType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/UpdateStudentType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GraphQL/Types/Input/UserRegisterType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/UserRegisterType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GraphQL/Types/Output/AttendanceType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Types/Output/AttendanceType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GraphQL/Types/Output/ClassType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Types/Output/ClassType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GraphQL/Types/Output/StudentType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Types/Output/StudentType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/GraphQL/Types/Output/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Types/Output/UserType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/GraphQL/Mutations/UpdateStudent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Mutations/UpdateStudent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/GraphQL/Queries/ElasticSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Queries/ElasticSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/GraphQL/Queries/GetStudents.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Queries/GetStudents.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/GraphQL/Queries/GetUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Queries/GetUsers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/GraphQL/Types/Input/Filters/FiltersStudentType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/Filters/FiltersStudentType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/GraphQL/Types/Input/Filters/FiltersType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/Filters/FiltersType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/GraphQL/Types/Input/UpdateClassInputType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GraphQL/Types/Input/UpdateClassInputType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/ClassRoom.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ClassRoom.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ClassSection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ClassSection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Classes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Classes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/DailyAttendance.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/DailyAttendance.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Role.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Routine.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Routine.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/StudentParent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/StudentParent.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/StudentSubject.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/StudentSubject.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repository/BaseRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repository/BaseRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repository/ClassRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repository/ClassRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repository/StudentRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repository/StudentRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Teacher.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Teacher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/laratrust_seeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/laratrust_seeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ClassSectionFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ClassSectionFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/DailyAttendance.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/DailyAttendanceFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/factories/StudentSubject.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/StudentSubject.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_23_120938_create_classes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_23_120938_create_classes_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_23_120959_create_class_rooms_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_23_120959_create_class_rooms_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_23_121451_create_sections_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_23_121451_create_sections_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_23_121519_create_students_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_23_12991519_create_students_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_23_121716_create_subjects_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_23_121716_create_subjects_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_23_122110_create_daily_attendances_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_23_129992110_create_daily_attendances_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/onHold/2019_11_23_121429_create_routines_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_23_221429_create_routines_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/onHold/2019_11_23_121741_create_teachers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_23_121741_create_teachers_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/onHold/2019_11_23_122124_create_departments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_23_120124_create_departments_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/onHold/2019_11_23_122301_create_grades_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_23_122301_create_grades_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/onHold/2019_11_23_122329_create_marks_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_23_333332329_create_marks_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_23_129992110_create_daily_attendances_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_23_129992110_create_daily_attendances_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_23_221429_create_routines_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_23_221429_create_routines_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/BaseSchoolStructureSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/BaseSchoolStructureSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/StudentsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/StudentsTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,27 +228,28 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/GraphQL/Types/Output" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/GraphQL/Types/Input" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/GraphQL/Types/Input" />
+      <recent name="$PROJECT_DIR$/app/GraphQL/Mutations" />
+      <recent name="$PROJECT_DIR$/app/GraphQL/Types/Input/Filters" />
+      <recent name="$PROJECT_DIR$/app/Repository" />
+      <recent name="$PROJECT_DIR$/app/GraphQL/Queries" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/database/migrations" />
       <recent name="$PROJECT_DIR$/tests/Feature" />
       <recent name="$PROJECT_DIR$/app/GraphQL/Types/Output" />
       <recent name="$PROJECT_DIR$/app/GraphQL/Types/Input" />
       <recent name="$PROJECT_DIR$/database/migrations/onHold" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/GraphQL/Types/Output" />
-      <recent name="$PROJECT_DIR$/app/GraphQL/Queries" />
-      <recent name="$PROJECT_DIR$/app/Repository" />
-      <recent name="$PROJECT_DIR$/app/Criteria" />
-      <recent name="$PROJECT_DIR$/app/GraphQL/Types/Input/Filters" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.StudentsTest.testGetStudents">
@@ -386,6 +355,10 @@
       <workItem from="1582740839890" duration="12371000" />
       <workItem from="1582878624978" duration="1893000" />
       <workItem from="1583345705741" duration="13382000" />
+      <workItem from="1583739476244" duration="45000" />
+      <workItem from="1583861437123" duration="1907000" />
+      <workItem from="1583913251787" duration="2965000" />
+      <workItem from="1583938440029" duration="23999000" />
     </task>
     <servers />
   </component>
@@ -434,26 +407,26 @@
     </state>
     <state x="543" y="-921" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1578151107796" />
     <state x="2253" y="-902" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1581344580140" />
-    <state x="700" y="322" key="#com.intellij.ide.util.MemberChooser" timestamp="1583442990782">
+    <state x="700" y="322" key="#com.intellij.ide.util.MemberChooser" timestamp="1583960196799">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="590" y="-998" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1582043536705" />
     <state x="2280" y="-1039" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1581345247076" />
-    <state x="700" y="322" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1583442990782" />
-    <state x="-610" y="-1440" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1582644475218">
-      <screen x="-1760" y="-1440" width="3440" height="1440" />
+    <state x="700" y="322" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1583960196799" />
+    <state x="562" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584040666438">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="380" y="-1440" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1582054071519" />
     <state x="2162" y="-1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1581343917164" />
     <state x="-610" y="-1440" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1680.1050/1680.-1838.1440.2560/-1760.-1440.3440.1440@-1760.-1440.3440.1440" timestamp="1582644475218" />
-    <state x="562" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1581500633708" />
-    <state x="669" y="351" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583443413919">
+    <state x="562" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1584040666438" />
+    <state x="669" y="351" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1584041021643">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="542" y="-959" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1581252441940" />
     <state x="2253" y="-970" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1581345897121" />
     <state x="-390" y="-959" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1050/1680.-1838.1440.2560/-1760.-1440.3440.1440@-1760.-1440.3440.1440" timestamp="1582645056843" />
-    <state x="669" y="351" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1583443413919" />
+    <state x="669" y="351" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1584041021643" />
     <state x="2188" y="-611" key="#com.jetbrains.php.lang.intentions.PhpImportClassDialog#" timestamp="1578471464212">
       <screen x="1680" y="-1825" width="1440" height="2560" />
     </state>
@@ -530,7 +503,6 @@
     </state>
     <state x="1880" y="-1412" key="com.intellij.ide.util.TipDialog/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1580989138459" />
     <state x="233" y="169" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1581532641652" />
-    <state x="517" y="354" key="com.intellij.ide.util.TipDialog/0.23.1680.998/-1812.-1417.2560.1417/748.-1417.2560.1417@0.23.1680.998" timestamp="1575286195561" />
     <state x="535" y="-1116" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582054980568">
       <screen x="-476" y="-1440" width="2560" height="1440" />
     </state>
@@ -539,24 +511,26 @@
       <screen x="-476" y="-1440" width="2560" height="1440" />
     </state>
     <state x="607" y="-801" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1582054573216" />
-    <state x="193" y="88" width="1191" height="833" key="find.popup" timestamp="1582664801677">
+    <state x="193" y="88" width="1191" height="833" key="find.popup" timestamp="1584048167094">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="-87" y="-1296" width="1928" height="1116" key="find.popup/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1582054982379" />
     <state x="2215" y="-997" width="801" height="904" key="find.popup/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1581345195493" />
     <state x="-1237" y="-1296" width="2591" height="1116" key="find.popup/0.0.1680.1050/1680.-1838.1440.2560/-1760.-1440.3440.1440@-1760.-1440.3440.1440" timestamp="1582620122871" />
-    <state x="193" y="88" width="1191" height="833" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1582664801677" />
+    <state x="193" y="88" width="1191" height="833" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1584048167094" />
     <state x="2065" y="-287" key="run.anything.popup" timestamp="1579250433140">
       <screen x="1680" y="-1825" width="1440" height="2560" />
     </state>
     <state x="2065" y="-287" key="run.anything.popup/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1579250433140" />
-    <state x="505" y="243" width="782" height="677" key="search.everywhere.popup" timestamp="1583445040768">
+    <state x="505" y="243" width="782" height="677" key="search.everywhere.popup" timestamp="1584219200260">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="294" y="-1107" width="1021" height="928" key="search.everywhere.popup/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1582057969213" />
+    <state x="294" y="-1107" width="1021" height="928" key="search.everywhere.popup/0.0.1680.1050/-476.-1440.2560.1440@-476.-1440.2560.1440" timestamp="1584001808223" />
     <state x="505" y="243" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050/-476.-1440.2560.1440@0.0.1680.1050" timestamp="1576325544058" />
     <state x="2113" y="-1233" width="670" height="1650" key="search.everywhere.popup/0.0.1680.1050/1680.-1825.1440.2560/-1760.-1440.3440.1440@1680.-1825.1440.2560" timestamp="1581926834297" />
     <state x="-726" y="-1107" width="1602" height="929" key="search.everywhere.popup/0.0.1680.1050/1680.-1838.1440.2560/-1760.-1440.3440.1440@-1760.-1440.3440.1440" timestamp="1582644173469" />
-    <state x="505" y="243" width="782" height="677" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1583445040768" />
+    <state x="-726" y="-1107" width="1602" height="929" key="search.everywhere.popup/0.0.1680.1050/1680.-1860.1440.2560/-1760.-1440.3440.1440@-1760.-1440.3440.1440" timestamp="1583925909944" />
+    <state x="2113" y="-1268" width="671" height="1652" key="search.everywhere.popup/0.0.1680.1050/1680.-1860.1440.2560/-1760.-1440.3440.1440@1680.-1860.1440.2560" timestamp="1583940581675" />
+    <state x="505" y="243" width="782" height="677" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1584219200260" />
   </component>
 </project>

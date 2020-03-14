@@ -39,13 +39,4 @@ class StudentIndexConfigurator extends IndexConfigurator
             ],
         ]
     ];
-//    protected $settings = [
-//        'analysis' => [
-//            'analyzer' => [
-//                'es_std' => [
-//                    'type' => 'standard'
-//                ]
-//            ]
-//        ]
-//    ];
 }

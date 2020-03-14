@@ -22,11 +22,13 @@ $factory->define(StudentSubject::class, static function (Faker $faker, $args) {
     $name = 'Subject ' . $faker->numberBetween(1, 100);
     isset($args['school_id']) ? $baseSchool = $args['school_id'] : $baseSchool = factory(\App\Models\School::class)->create()->getId();
     isset($args['class_id']) ? $classID = $args['class_id'] : $classID = factory(\App\Models\Classes::class)->create(['school_id' => $baseSchool]);
+    isset($args['session_id']) ? $sessionId = $args['session_id'] : $sessionId = factory(\App\Models\Session::class)->create(['school_id' => $baseSchool]);
 
     return [
         'name' => $name,
         'slug' => \Illuminate\Support\Str::slug($name),
-        'session' => null,
-        'class_id' => $classID
+        'session_id' => $sessionId,
+        'class_id' => $classID,
+        'school_id' => $baseSchool
     ];
 });

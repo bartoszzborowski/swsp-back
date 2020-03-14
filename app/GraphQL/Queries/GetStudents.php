@@ -48,6 +48,12 @@ class GetStudents extends Query
                 case FiltersStudentType::FIELD_CLASS_ID:
                     $studentRepository->pushCriteria(new GetByIdCriteria($value, 'classes_id'));
                     break;
+                case FiltersStudentType::FIELD_SECTION_ID:
+                    $studentRepository->pushCriteria(new GetByIdCriteria($value, 'section_id'));
+                    break;
+                case FiltersStudentType::FIELD_USER_ID:
+                    $studentRepository->pushCriteria(new GetByIdCriteria($value, 'user_id'));
+                    break;
             }
         }
 

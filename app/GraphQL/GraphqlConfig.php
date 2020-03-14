@@ -5,11 +5,15 @@ use App\GraphQL\InputObject\ReviewInput;
 use App\GraphQL\Mutations\CreateAttendance;
 use App\GraphQL\Mutations\CreateClass;
 use App\GraphQL\Mutations\CreateClassSection;
+use App\GraphQL\Mutations\CreateRoom;
+use App\GraphQL\Mutations\CreateRoutines;
 use App\GraphQL\Mutations\CreateSession;
 use App\GraphQL\Mutations\CreateStudent;
 use App\GraphQL\Mutations\CreateSubject;
 use App\GraphQL\Mutations\DeleteClass;
 use App\GraphQL\Mutations\DeleteClassSection;
+use App\GraphQL\Mutations\DeleteRoom;
+use App\GraphQL\Mutations\DeleteRoutine;
 use App\GraphQL\Mutations\DeleteSession;
 use App\GraphQL\Mutations\DeleteStudent;
 use App\GraphQL\Mutations\DeleteStudentSubject;
@@ -18,16 +22,20 @@ use App\GraphQL\Mutations\RegisterUser;
 use App\GraphQL\Mutations\UpdateAttendance;
 use App\GraphQL\Mutations\UpdateClass;
 use App\GraphQL\Mutations\UpdateClassSection;
+use App\GraphQL\Mutations\UpdateRoom;
+use App\GraphQL\Mutations\UpdateRoutine;
 use App\GraphQL\Mutations\UpdateSession;
 use App\GraphQL\Mutations\UpdateStudent;
 use App\GraphQL\Mutations\UpdateSubject;
 use App\GraphQL\Mutations\UpdateUser;
 use App\GraphQL\Mutations\UpdateUserPasswordMutation;
 use App\GraphQL\Queries\ElasticSearch;
+use App\GraphQL\Queries\GerRoutine;
 use App\GraphQL\Queries\GetAttendance;
 use App\GraphQL\Queries\GetClasses;
 use App\GraphQL\Queries\GetClassSections;
 use App\GraphQL\Queries\GetParents;
+use App\GraphQL\Queries\GetRooms;
 use App\GraphQL\Queries\GetSchools;
 use App\GraphQL\Queries\GetSessions;
 use App\GraphQL\Queries\GetStudents;
@@ -40,16 +48,22 @@ use App\GraphQL\Type\Enum\RoleTypeEnum;
 use App\GraphQL\Types\Input\ClassInputType;
 use App\GraphQL\Types\Input\ClassSectionInputType;
 use App\GraphQL\Types\Input\Filters\FiltersAttendanceType;
+use App\GraphQL\Types\Input\Filters\FiltersRoutineType;
 use App\GraphQL\Types\Input\Filters\FiltersSearchElasticType;
 use App\GraphQL\Types\Input\Filters\FiltersSectionsType;
 use App\GraphQL\Types\Input\Filters\FiltersStudentSubject;
 use App\GraphQL\Types\Input\Filters\FiltersStudentType;
 use App\GraphQL\Types\Input\Filters\FiltersType;
+use App\GraphQL\Types\Input\Filters\FilterUserType;
 use App\GraphQL\Types\Input\PaginationType;
+use App\GraphQL\Types\Input\RoomInputType;
+use App\GraphQL\Types\Input\RoutineInputType;
 use App\GraphQL\Types\Input\StudentSubjectInputType;
 use App\GraphQL\Types\Input\UpdateAttendanceType;
 use App\GraphQL\Types\Input\UpdateClassInputType;
 use App\GraphQL\Types\Input\UpdateClassSectionInputType;
+use App\GraphQL\Types\Input\UpdateRoomInputType;
+use App\GraphQL\Types\Input\UpdateRoutineInputType;
 use App\GraphQL\Types\Input\UpdateStudentSubjectInputType;
 use App\GraphQL\Types\Input\UpdateStudentType as UpdateStudentInputType;
 use App\GraphQL\Types\Input\UpdateUserType;
@@ -59,6 +73,8 @@ use App\GraphQL\Types\Output\AttendanceType;
 use App\GraphQL\Types\Output\ClassSectionType;
 use App\GraphQL\Types\Output\ClassType;
 use App\GraphQL\Types\Output\ParentType;
+use App\GraphQL\Types\Output\RoomType;
+use App\GraphQL\Types\Output\RoutineType;
 use App\GraphQL\Types\Output\SchoolType;
 use App\GraphQL\Types\Output\SearchElasticType;
 use App\GraphQL\Types\Output\SessionType;
@@ -87,6 +103,8 @@ class GraphqlConfig
             GetClassSections::class,
             GetSchools::class,
             GetTeachers::class,
+            GetRooms::class,
+            GerRoutine::class,
         ];
     }
 
@@ -114,6 +132,12 @@ class GraphqlConfig
             CreateSubject::class,
             UpdateSubject::class,
             DeleteStudentSubject::class,
+            CreateRoom::class,
+            UpdateRoom::class,
+            DeleteRoom::class,
+            CreateRoutines::class,
+            UpdateRoutine::class,
+            DeleteRoutine::class,
         ];
     }
 
@@ -128,6 +152,7 @@ class GraphqlConfig
             AttendanceType::class,
             ClassType::class,
             ElasticSearchTypeEnum::class,
+            FiltersRoutineType::class,
             FiltersSearchElasticType::class,
             FiltersStudentSubject::class,
             FiltersStudentType::class,
@@ -158,6 +183,13 @@ class GraphqlConfig
             FiltersSectionsType::class,
             SchoolType::class,
             TeacherType::class,
+            FilterUserType::class,
+            RoomType::class,
+            RoomInputType::class,
+            UpdateRoomInputType::class,
+            RoutineType::class,
+            RoutineInputType::class,
+            UpdateRoutineInputType::class,
         ];
     }
 }

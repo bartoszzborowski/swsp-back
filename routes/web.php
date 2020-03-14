@@ -21,14 +21,31 @@ Route::get('/', function () {
 });
 
 Route::get('/article', function () {
-//    $dupa = StudentParent::query()->paginate(5000, ['id', 'user_id'], 'test', 1);
+    $userRepository = app(\App\Repository\UserRepository::class);
+    for ($i = 1; $i <= 100; $i++) {
+        $args = [
+            'name' => 'Uczen ' . $i,
+            'last_name' => 'Nowy ' . $i,
+            'role' => 'student',
+            'email' => 'uczen' . $i . '@app.com',
+            'password' => bcrypt('password'),
+            'address' => 'Adres ucznia ' . $i,
+            'phone' => '123 123 123',
+            'birthday' => \Carbon\Carbon::now(),
+            'blood_group' => "AB",
+        ];
+
+        $userRepository->create($args);
+    }
+
+//    $dupa = Student::query()->paginate(5000, ['id', 'user_id'], 'test', 1);
 //    $dupa->each(static function ($item) {
 //        $item->searchable();
 //    });
 //    $test = Student::search('sebastia')->with('user');
 
-    /** @var ClassSectionRepository $repo */
-    $repo = app(ClassSectionRepository::class);
-    $repo->pushCriteria(new \App\Criteria\ClassSectionCriteria(2));
-    dd($repo->all());
+//    /** @var ClassSectionRepository $repo */
+//    $repo = app(ClassSectionRepository::class);
+//    $repo->pushCriteria(new \App\Criteria\ClassSectionCriteria(2));
+//    dd($repo->all());
 });

@@ -66,7 +66,6 @@ class Student extends Model
     // Here you can specify a mapping for model fields
     protected $mapping = [
         'properties' => [
-
             'id' => [
                 'type' => 'integer'
             ],

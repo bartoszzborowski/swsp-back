@@ -27,6 +27,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Teacher whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Teacher whereUserId($value)
  * @mixin \Eloquent
+ * @property-read User $user
  */
 class Teacher extends Model
 {
@@ -97,6 +98,6 @@ class Teacher extends Model
 
     public function user(): HasOne
     {
-        return $this->hasOne(User::class);
+        return $this->hasOne(User::class, 'id', 'user_id');
     }
 }

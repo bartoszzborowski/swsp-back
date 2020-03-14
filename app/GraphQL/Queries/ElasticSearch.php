@@ -27,7 +27,6 @@ class ElasticSearch extends Query
     public function type(): Type
     {
         return Type::listOf(GraphQL::type(SearchElasticType::TYPE_NAME));
-//        return GraphQL::paginate(SearchElasticType::TYPE_NAME);
     }
 
     public function args(): array
@@ -54,21 +53,5 @@ class ElasticSearch extends Query
         }
 
         return $result;
-
-        /** @var ClassRepository $classesRepository */
-//        $classesRepository = app(ClassRepository::class);
-//        // FILTER ARGUMENTS //
-//        $filters = $this->getFiltersFromQuery($args);
-//        [$take, $page] = $this->getPaginationFromQuery($args);
-//
-//        foreach ($filters as $index => $value) {
-//            switch ($index) {
-//                case FiltersType::FIELD_ID:
-//                    $classesRepository->pushCriteria(new GetByIdCriteria($value));
-//                    break;
-//            }
-//        }
-//
-//        return $classesRepository->paginate($take, $page);
     }
 }

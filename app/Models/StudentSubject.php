@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Constants\Database;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 /**
  * App\Models\StudentSubject
@@ -26,6 +27,10 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\StudentSubject whereSession($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\StudentSubject whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\StudentSubject whereUpdatedAt($value)
+ * @property int|null $session_id
+ * @property int|null $school_id
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\StudentSubject whereSchoolId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\StudentSubject whereSessionId($value)
  */
 class StudentSubject extends Model
 {
@@ -36,9 +41,14 @@ class StudentSubject extends Model
         'slug',
         'session',
         'class_id',
-        'school_idx'
+        'school_id'
     ];
 
+    public function setNameAttribute($name): void
+    {
+        $this->attributes['name'] = $name;
+        $this->attributes['slug'] = Str::slug($name);
+    }
     /**
      * @return int
      */

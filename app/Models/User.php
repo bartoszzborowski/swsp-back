@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Constants\Database;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -304,5 +305,10 @@ class User extends Authenticatable implements JWTSubject
     public function setBirthdayAttribute($value)
     {
         $this->attributes[self::BIRTHDAY] = Carbon::parse($value)->setTimezone('UTC');
+    }
+
+    public function joinRoleUser()
+    {
+        return $this->join(Database::ROLE_USER, 'id', '=', 'user_id');
     }
 }

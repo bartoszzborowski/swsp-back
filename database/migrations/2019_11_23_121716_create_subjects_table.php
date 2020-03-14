@@ -17,12 +17,13 @@ class CreateSubjectsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name')->nullable();
             $table->string('slug')->nullable();
-            $table->string('session')->nullable();
+            $table->unsignedBigInteger('session_id')->nullable();
             $table->unsignedBigInteger('class_id')->nullable();
             $table->unsignedBigInteger('school_id')->nullable();
             $table->timestamps();
 
-            $table->foreign('class_id')->references('id')->on('classes')->onDelete('cascade');
+            $table->foreign('session_id')->references('id')->on('sessions');
+            $table->foreign('class_id')->references('id')->on('classes');
             $table->foreign('school_id')->references('id')->on('schools')->onDelete('cascade');
         });
     }
@@ -36,6 +37,8 @@ class CreateSubjectsTable extends Migration
     {
         Schema::table('students_subjects', static function (Blueprint $table) {
             $table->dropForeign(['class_id']);
+            $table->dropForeign(['session_id']);
+            $table->dropForeign(['school_id']);
         });
 
         Schema::dropIfExists('students_subjects');

@@ -4,17 +4,16 @@ namespace App\GraphQL\Queries;
 
 use App\Constants\GraphQL as GraphQLConstants;
 use App\Criteria\GetByIdCriteria;
-use App\Criteria\RoleCriteria;
-use App\GraphQL\Types\Input\Filters\FilterUserType;
+use App\GraphQL\Types\Input\Filters\FiltersType;
 use App\GraphQL\Types\Input\PaginationType;
-use App\GraphQL\Types\Output\UserType;
-use App\Repository\UserRepository;
+use App\GraphQL\Types\Output\RoomType;
+use App\Repository\RoomRepository;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use GraphQL\Type\Definition\Type;
 
-class GetUsers extends Query
+class GetRooms extends Query
 {
-    public const QUERY_NAME = 'users';
+    public const QUERY_NAME = 'rooms';
 
     protected $attributes = [
         'name' => self::QUERY_NAME
@@ -22,35 +21,33 @@ class GetUsers extends Query
 
     public function type(): Type
     {
-        return GraphQL::paginate(UserType::TYPE_NAME);
+        return GraphQL::paginate(RoomType::TYPE_NAME);
     }
 
     public function args(): array
     {
         return [
-            ['name' => GraphQLConstants::FILTER_ARG_NAME, 'type' => GraphQL::type(FilterUserType::TYPE_NAME)],
+            ['name' => GraphQLConstants::FILTER_ARG_NAME, 'type' => GraphQL::type(FiltersType::TYPE_NAME)],
             ['name' => GraphQLConstants::PAGINATION_ARG_NAME, 'type' => GraphQL::type(PaginationType::TYPE_NAME)],
         ];
     }
 
     public function resolve($root, $args)
     {
-        /** @var UserRepository $userRepository */
-        $userRepository = app(UserRepository::class);
+        /** @var RoomRepository $roomRepository */
+        $roomRepository = app(RoomRepository::class);
         // FILTER ARGUMENTS //
         $filters = $this->getFiltersFromQuery($args);
         [$take, $page] = $this->getPaginationFromQuery($args);
 
         foreach ($filters as $index => $value) {
             switch ($index) {
-                case FilterUserType::FIELD_ID:
-                    $userRepository->pushCriteria(new GetByIdCriteria($value));
+                case FiltersType::FIELD_ID:
+                    $roomRepository->pushCriteria(new GetByIdCriteria($value));
                     break;
-                case FilterUserType::FIELD_ROLE:
-                    $userRepository->pushCriteria(new RoleCriteria($value));
             }
         }
 
-        return $userRepository->paginate($take, $page);
+        return $roomRepository->paginate($take, $page);
     }
 }

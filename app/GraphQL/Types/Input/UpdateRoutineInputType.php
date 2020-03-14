@@ -2,19 +2,19 @@
 
 namespace App\GraphQL\Types\Input;
 
-use App\Models\Classes;
 use App\Models\ClassRoom;
+use App\Models\Routine;
 use GraphQL\Type\Definition\Type;
 
-class UpdateClassInputType extends ClassInputType
+class UpdateRoutineInputType extends RoutineInputType
 {
-    public const TYPE_NAME = 'UpdateClassInputType';
+    public const TYPE_NAME = 'UpdateRoutineInputType';
 
-    public const FIELD_CLASS_ID = 'id';
+    public const FIELD_ROUTINE_ID = 'id';
 
     protected $attributes = [
         'name' => self::TYPE_NAME,
-        'model' => ClassRoom::class,
+        'model' => Routine::class,
     ];
 
     public function fields(): array
@@ -22,7 +22,7 @@ class UpdateClassInputType extends ClassInputType
         $fields = parent::fields();
 
         return array_merge($fields, [
-            self::FIELD_CLASS_ID => [
+            self::FIELD_ROUTINE_ID => [
                 'type' => Type::int()
             ],
         ]);

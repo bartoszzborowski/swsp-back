@@ -9,6 +9,7 @@ class FiltersType extends GraphQLType
 {
     public const TYPE_NAME = 'FiltersInputType';
     public const FIELD_ID = 'id';
+    public const FIELD_SCHOOL_ID = 'school_id';
 
     protected $inputObject = true;
 
@@ -21,6 +22,9 @@ class FiltersType extends GraphQLType
     {
         return [
             self::FIELD_ID => [
+                'type' => Type::int()
+            ],
+            self::FIELD_SCHOOL_ID => [
                 'type' => Type::int()
             ],
         ];

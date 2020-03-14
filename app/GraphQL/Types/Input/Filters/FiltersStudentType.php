@@ -10,6 +10,8 @@ class FiltersStudentType extends FiltersType
     public const FIELD_IS_ADDITIONAL = 'is_additional';
     public const FIELD_IS_PREMIUM = 'is_premium';
     public const FIELD_CLASS_ID = 'class_id';
+    public const FIELD_SECTION_ID = 'section_id';
+    public const FIELD_USER_ID = 'user_id';
 
     protected $attributes = [
         'name' => self::TYPE_NAME
@@ -27,6 +29,12 @@ class FiltersStudentType extends FiltersType
                 'type' => Type::boolean()
             ],
             self::FIELD_CLASS_ID => [
+                'type' => Type::int()
+            ],
+            self::FIELD_SECTION_ID => [
+                'type' => Type::int()
+            ],
+            self::FIELD_USER_ID => [
                 'type' => Type::int()
             ]
         ]);

@@ -9,6 +9,7 @@ class Database
     public const PARENT = 'parent';
     public const PERMISSIONS = 'permissions';
     public const ROLES = 'roles';
+    public const ROLE_USER = 'role_user';
     public const SCHOOL = 'schools';
     public const SESSIONS = 'sessions';
     public const SETTINGS = 'settings';

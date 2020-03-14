@@ -28,4 +28,58 @@ use Illuminate\Database\Eloquent\Model;
 class ClassRoom extends Model
 {
     protected $table = Database::CLASSROOMS;
+
+    protected $fillable = [
+        'name',
+        'school_id',
+        'capacity',
+    ];
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSchoolId(): int
+    {
+        return $this->school_id;
+    }
+
+    /**
+     * @return \Illuminate\Support\Carbon|null
+     */
+    public function getCreatedAt(): ?\Illuminate\Support\Carbon
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * @return \Illuminate\Support\Carbon|null
+     */
+    public function getUpdatedAt(): ?\Illuminate\Support\Carbon
+    {
+        return $this->updated_at;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCapacity(): int
+    {
+        return $this->capacity;
+    }
 }

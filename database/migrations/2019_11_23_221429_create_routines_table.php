@@ -21,10 +21,11 @@ class CreateRoutinesTable extends Migration
             $table->unsignedBigInteger('teacher_id')->nullable();
             $table->unsignedBigInteger('room_id')->nullable();
             $table->unsignedBigInteger('school_id')->nullable();
-            $table->string('starting_hours')->nullable();
+            $table->string('starting_hour')->nullable();
             $table->string('ending_hour')->nullable();
             $table->string('starting_minute')->nullable();
             $table->string('ending_minute')->nullable();
+            $table->integer('lesson_number')->nullable();
             $table->string('day')->nullable();
             $table->string('session')->nullable();
             $table->timestamps();

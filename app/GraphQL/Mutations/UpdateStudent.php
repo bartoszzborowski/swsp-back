@@ -5,8 +5,6 @@ namespace App\GraphQL\Mutations;
 use App\Constants\GraphQL as GraphQLConstant;
 use App\GraphQL\Types\Input\UpdateStudentType as UpdateStudentInputType;
 use App\GraphQL\Types\Output\StudentType;
-use App\Models\Student;
-use App\Models\User;
 use App\Repository\StudentRepository;
 use App\Repository\UserRepository;
 use Closure;
@@ -17,7 +15,6 @@ use Illuminate\Support\Facades\Log;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use GraphQL\Type\Definition\Type as GraphqlType;
 use Rebing\GraphQL\Support\Mutation;
-use Tymon\JWTAuth\Facades\JWTAuth;
 
 class UpdateStudent extends Mutation
 {

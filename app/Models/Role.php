@@ -30,4 +30,14 @@ use Laratrust\Models\LaratrustRole;
 class Role extends LaratrustRole
 {
     protected $table = Database::ROLES;
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
 }

@@ -15,7 +15,7 @@ class CreateDailyAttendancesTable extends Migration
     {
         Schema::create('daily_attendances', static function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('status');
+            $table->string('status');
             $table->unsignedBigInteger('class_id');
             $table->unsignedBigInteger('section_id');
             $table->unsignedBigInteger('student_id');
