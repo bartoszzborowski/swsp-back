@@ -13,12 +13,15 @@ class CreateSchoolsTable extends Migration
      */
     public function up()
     {
-        if(!Schema::hasTable('schools')) {
+        if (!Schema::hasTable('schools')) {
             Schema::create('schools', function (Blueprint $table) {
                 $table->bigIncrements('id');
                 $table->string('name')->nullable();
                 $table->text('address')->nullable();
+                $table->text('email')->nullable();
+                $table->text('city')->nullable();
                 $table->string('phone')->nullable();
+                $table->string('zip_code')->nullable();
                 $table->timestamps();
             });
         }

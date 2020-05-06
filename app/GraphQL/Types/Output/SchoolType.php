@@ -27,7 +27,16 @@ class SchoolType extends GraphQLType
             'address' => [
                 'type' => Type::string()
             ],
+            'email' => [
+                'type' => Type::string()
+            ],
+            'city' => [
+                'type' => Type::string()
+            ],
             'phone' => [
+                'type' => Type::string()
+            ],
+            'zip_code' => [
                 'type' => Type::string()
             ],
         ];

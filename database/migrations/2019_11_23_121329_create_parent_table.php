@@ -13,7 +13,7 @@ class CreateParentTable extends Migration
      */
     public function up()
     {
-        Schema::create('parent', function (Blueprint $table) {
+        Schema::create('parents', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('student_id')->nullable();

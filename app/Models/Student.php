@@ -130,6 +130,11 @@ class Student extends Model
         return $this->hasOne(ClassSection::class, 'id', 'section_id');
     }
 
+    public function school(): HasOne
+    {
+        return $this->hasOne(School::class, 'id', 'school_id');
+    }
+
     /**
      * @return int
      */
